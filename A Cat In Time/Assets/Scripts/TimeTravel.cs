@@ -4,32 +4,41 @@ using UnityEngine;
 
 public class TimeTravel : MonoBehaviour
 {
-    private bool travelComplete = false;
+    private bool travelComplete = true;     //damit man nicht spammen kann
+    private Vector3 newPos;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        newPos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
-    void StartTravel()
+    private void Update()
     {
-        Debug.Log("Time Travel begins");
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-        sphere.transform.position = new Vector3(0f, 2f, 0f);
-        travelComplete = true;
-
+        if (!travelComplete)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, newPos, Time.deltaTime * 1);
+        }
     }
 
     private void OnMouseDown()
     {
-        StartTravel();
+        StartCoroutine( StartTravel());
     }
+
+    //This is where the magic happens
+    private IEnumerator StartTravel()
+    {
+        if (travelComplete)
+        {
+            travelComplete = false;
+            Debug.Log("Time Travel begins");
+            yield return new WaitWhile(() => transform.position != newPos);
+            travelComplete = true;
+        }
+       
+    }
+
+    
 
 }

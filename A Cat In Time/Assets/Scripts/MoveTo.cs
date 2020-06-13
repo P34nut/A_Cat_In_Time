@@ -11,7 +11,7 @@ public class MoveTo : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
+        agent.updateRotation = false;               //Ob Kamera rotiert und zu getouchtem Punkt schaut oder nicht (erstmal aus, kann aber auch an wenn gewünscht)
     }
 
     // Update is called once per frame
