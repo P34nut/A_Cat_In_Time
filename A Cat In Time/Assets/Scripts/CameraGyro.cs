@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraGyro : MonoBehaviour
 {
-    private GameObject camParent;
+    public GameObject camParent;
     private bool gyroEnabled;
     private Gyroscope gyroscope;
     private Quaternion rotation;
@@ -13,8 +13,6 @@ public class CameraGyro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camParent = new GameObject("CameraParent");
-        camParent.transform.position = this.transform.position;
         this.transform.parent = camParent.transform;
         Input.gyro.enabled = true;
         //camParent.transform.rotation = Quaternion.Euler(90f, -90f, 0f);
