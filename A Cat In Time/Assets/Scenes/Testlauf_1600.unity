@@ -129,6 +129,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8041494036037015602, guid: 698d68a3e35c7fd41ab0d446265df0ad,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8041494036037015603, guid: 698d68a3e35c7fd41ab0d446265df0ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -234,10 +239,35 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8041494036037015603, guid: 698d68a3e35c7fd41ab0d446265df0ad,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041494036037015603, guid: 698d68a3e35c7fd41ab0d446265df0ad,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041494036037015603, guid: 698d68a3e35c7fd41ab0d446265df0ad,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8041494036037015607, guid: 698d68a3e35c7fd41ab0d446265df0ad,
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041494036612263218, guid: 698d68a3e35c7fd41ab0d446265df0ad,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041494036612263218, guid: 698d68a3e35c7fd41ab0d446265df0ad,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 698d68a3e35c7fd41ab0d446265df0ad, type: 3}
