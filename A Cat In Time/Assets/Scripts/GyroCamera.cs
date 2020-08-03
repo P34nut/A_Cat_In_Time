@@ -12,6 +12,7 @@ public class GyroCamera : MonoBehaviour
     private float _calibrationYAngle = 0f;
     private Transform _rawGyroRotation;
     private float _tempSmoothing;
+    private bool supportsGyro;
 
     // SETTINGS
     [SerializeField] private float _smoothing = 0.1f;
@@ -23,6 +24,10 @@ public class GyroCamera : MonoBehaviour
 
     private IEnumerator Start()
     {
+        if (SystemInfo.supportsGyroscope)
+        {
+            supportsGyro = true;
+        }
         Input.gyro.enabled = true;
         Application.targetFrameRate = 60;
         _initialYAngle = transform.eulerAngles.y;
@@ -40,10 +45,14 @@ public class GyroCamera : MonoBehaviour
 
     private void Update()
     {
-        ApplyGyroRotation();
-        ApplyCalibration();
+        if (supportsGyro)
+        {
+            ApplyGyroRotation();
+            ApplyCalibration();
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, _rawGyroRotation.rotation, _smoothing);
+            transform.rotation = Quaternion.Slerp(transform.rotation, _rawGyroRotation.rotation, _smoothing);
+        }
+        
     }
 
     private IEnumerator CalibrateYAngle()
