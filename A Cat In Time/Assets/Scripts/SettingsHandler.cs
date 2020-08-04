@@ -34,7 +34,7 @@ public class SettingsHandler : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log(scene.buildIndex);
+        Debug.Log("Scene: " + scene.buildIndex);
         switch (scene.buildIndex)
         {
             case 1:
