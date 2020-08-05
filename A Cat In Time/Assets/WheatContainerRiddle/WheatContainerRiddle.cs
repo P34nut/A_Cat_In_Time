@@ -61,8 +61,7 @@ public class WheatContainerRiddle : MonoBehaviour
         int totransfer = Mathf.Clamp(scoopFillstate, 0, Containers[ct].GetEmptySpace());
         Containers[ct].SetFillstate(Containers[ct].GetFillstate() + totransfer);
         scoopFillstate -= totransfer;
-        if (Solved()) 
-           Win();
+        if (Solved()) Invoke(nameof(Win), 1.5f);
     }
 
     //Returns true if all fillstates are equal - currently only works with 3 containers
