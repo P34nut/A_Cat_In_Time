@@ -61,6 +61,8 @@ public class WheatContainerRiddle : MonoBehaviour
         int totransfer = Mathf.Clamp(scoopFillstate, 0, Containers[ct].GetEmptySpace());
         Containers[ct].SetFillstate(Containers[ct].GetFillstate() + totransfer);
         scoopFillstate -= totransfer;
+        if (Solved()) 
+           Win();
     }
 
     //Returns true if all fillstates are equal - currently only works with 3 containers
@@ -68,6 +70,11 @@ public class WheatContainerRiddle : MonoBehaviour
     {
         return (Containers[0].GetFillstate() == Containers[1].GetFillstate() &
          Containers[0].GetFillstate() == Containers[2].GetFillstate());
+    }
+
+    void Win() {
+        Debug.Log("Kornmarkträtsel gewonnen!");
+        //Run win code!! Feuerwerk!!!
     }
 
     void Update()
