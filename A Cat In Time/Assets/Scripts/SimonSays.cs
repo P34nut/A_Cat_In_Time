@@ -99,19 +99,20 @@ public class SimonSays : MonoBehaviour
     {
         inputEnabled = false;
 
-        randomGenerator = new System.Random("SimonSays".GetHashCode());
+        //Random nach Seed, dadurch aber jeder Durchlauf gleich. Falls jedes mal anders --> in Start eine RandomZahl erzeugen die als Seed nehmen
+        randomGenerator = new System.Random("SimonSaysACatInTime".GetHashCode()); 
 
         SetBleeps();
 
         yield return new WaitForSeconds(1f);
-
+        Debug.Log("______________________________________________");
         for (int i = 0; i < bleeps.Count; i++)
         {
             ShowAnim(bleeps[i]);
             AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0);
             yield return new WaitForSeconds(clipInfos[0].clip.length);         
         }
-
+        Debug.Log("--------------------------------------------------");
         inputEnabled = true;
 
         yield return null;
@@ -156,7 +157,7 @@ public class SimonSays : MonoBehaviour
 
         for (int i = 0; i < bleepCount; i++)
         {
-            bleeps.Add(randomGenerator.Next(0, 3));
+            bleeps.Add(randomGenerator.Next(0, 4));
         }
 
         bleepCount++;
