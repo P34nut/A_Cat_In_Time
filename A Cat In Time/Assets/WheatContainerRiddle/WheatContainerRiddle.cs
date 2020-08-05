@@ -14,7 +14,7 @@ public class WheatContainerRiddle : MonoBehaviour
 
     float animationSpeed = 2;
 
-
+    /*
     #region Testlauf - Remove me lat0r biatch
 
     void Start()
@@ -35,23 +35,20 @@ public class WheatContainerRiddle : MonoBehaviour
     void teststep6() { addScoopToContainer(1); }
 
     #endregion
-
+    */
 
     //Take scoop of wheat from a container - only possible when scoop is empty
     void takeScoopFromContainer(int ct)
     {
         if (scoopFillstate != 0)
-        {
             return;
-        }
+        
         if (Containers[ct].GetFillstate() >= scoopSize)
-        {
             scoopFillstate = scoopSize;
-        }
+    
         else
-        {
             scoopFillstate = Containers[ct].GetFillstate();
-        }
+        
         Containers[ct].SetFillstate(Containers[ct].GetFillstate() - scoopFillstate);
     }
 
@@ -61,7 +58,8 @@ public class WheatContainerRiddle : MonoBehaviour
         int totransfer = Mathf.Clamp(scoopFillstate, 0, Containers[ct].GetEmptySpace());
         Containers[ct].SetFillstate(Containers[ct].GetFillstate() + totransfer);
         scoopFillstate -= totransfer;
-        if (Solved()) Invoke(nameof(Win), 1.5f);
+        if (Solved()) 
+            Invoke(nameof(Win), 1.5f);
     }
 
     //Returns true if all fillstates are equal - currently only works with 3 containers
