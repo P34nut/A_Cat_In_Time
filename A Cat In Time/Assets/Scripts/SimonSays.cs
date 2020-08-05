@@ -10,10 +10,11 @@ public class SimonSays : MonoBehaviour
     public Transform panel;
     //public Sprite[] sprites;          //Sprites zur besseren Darstellung der Tanzschritte hinzufügen
 
-    private int bleepCount = 3;
+    private int bleepCount;
 
     List<int> bleeps;
     List<int> playerBleeps;
+    List<GameObject> playerButtons;
 
     System.Random randomGenerator;
 
@@ -24,6 +25,9 @@ public class SimonSays : MonoBehaviour
 
     public void StartGame()
     {
+        bleepCount = 3;
+        playerButtons = new List<GameObject>();
+
         panel.gameObject.SetActive(true);
 
         CreatePlayerButtons("1", 0);
@@ -47,13 +51,24 @@ public class SimonSays : MonoBehaviour
         {
             OnButtonClicked(index);
         });
+
+        playerButtons.Add(playerButton);
     }
 
     void GameOver()
     {
+        Debug.Log("GAME OVER");
         gameOver = true;
         inputEnabled = false;
-        Debug.Log("GAME OVER"); //Do Something when Game Over
+
+        for (int i = 0; i < playerButtons.Count; i++)
+        {
+            Destroy(playerButtons[i]);
+        }
+        playerButtons.Clear();
+        panel.gameObject.SetActive(false);
+        animator.Play("Idle");
+        gameOver = false;
     }
 
     void OnButtonClicked(int index)
