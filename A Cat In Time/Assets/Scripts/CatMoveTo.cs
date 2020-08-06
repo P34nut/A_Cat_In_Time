@@ -7,15 +7,20 @@ public class CatMoveTo : MonoBehaviour
 {
     public Transform target;
     NavMeshAgent agent;
+    public GameObject cat;
 
     [SerializeField]
     bool interactedVitrine;
-    
+
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        cat.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,6 +28,7 @@ public class CatMoveTo : MonoBehaviour
     {
         if (target!=null && interactedVitrine)
         {
+            cat.SetActive(true);
             agent.SetDestination(target.position);
             agent.updateRotation = true;
         }

@@ -35,6 +35,11 @@ public class MoveTo : MonoBehaviour
             RaycastHit hit;
             RaycastHit hit2;
 
+            if (Physics.Raycast(ray, out hit2, 100, dontMoveMask))
+            {
+                Debug.Log("Hit dont move");
+            }
+
             //check ob der Boden getroffen wird und kein anderes Objekt dazwischen ist
             if(Physics.Raycast(ray, out hit,100,mask) && !Physics.Raycast(ray, out hit2, 100, dontMoveMask))
             {

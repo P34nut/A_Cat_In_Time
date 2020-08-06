@@ -10,11 +10,16 @@ public class CatAnimator : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
