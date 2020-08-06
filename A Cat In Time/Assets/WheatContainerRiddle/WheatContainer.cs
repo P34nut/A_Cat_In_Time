@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class WheatContainer : MonoBehaviour
 {
     [SerializeField]
@@ -8,6 +9,12 @@ public class WheatContainer : MonoBehaviour
 
     [SerializeField]
     float animationSpeed = 2;
+
+    [SerializeField]
+    int ContainerID;
+
+    [SerializeField]
+    WheatContainerRiddle wheatContainerRiddle;
 
     void Awake()
     {
@@ -29,5 +36,14 @@ public class WheatContainer : MonoBehaviour
     void Update() {
         Vector3 newScale = new Vector3(1, (float)fillstate / Fractions, 1);
         transform.localScale = Vector3.Lerp (transform.localScale, newScale, animationSpeed * Time.deltaTime);
+    }
+
+    
+    void OnMouseDown() {
+        if (wheatContainerRiddle.scoopFillstate == 0) {
+            wheatContainerRiddle.TakeScoopFromContainer(ContainerID);
+        } else {
+            wheatContainerRiddle.AddScoopToContainer(ContainerID);
+        }
     }
 }

@@ -46,12 +46,12 @@ public class TimeTravel : MonoBehaviour {
     }
 
     private void OnMouseDown() {
-        initiatedTravel = true;
         StartCoroutine(StartTravel());
     }
 
     //thIs Is wHErE tHe mAGiC HapENs
-    private IEnumerator StartTravel() {
+    public IEnumerator StartTravel() {
+        initiatedTravel = true;
         yield return new WaitForSeconds(1f);
         //EKELHAFT. HARDCODED. DIRTY. PAH!
 
