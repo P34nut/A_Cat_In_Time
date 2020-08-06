@@ -28,7 +28,7 @@ public class MoveTo : MonoBehaviour
             //Wird ein UI geklickt? Wenn ja dann don't move
             if (EventSystem.current.IsPointerOverGameObject())
             {
-                Debug.Log("XXXX");
+                
                 return;
             }
             
@@ -45,6 +45,15 @@ public class MoveTo : MonoBehaviour
             if(Physics.Raycast(ray, out hit,100,mask) && !Physics.Raycast(ray, out hit2, 100, dontMoveMask))
             {
                 agent.SetDestination(hit.point);
+            }
+            else
+            {
+                Debug.Log("DistanceGround: " + hit.distance);
+                Debug.Log("DistanceDont: " + hit2.distance);
+                if (hit2.distance > hit.distance)
+                {
+                    agent.SetDestination(hit.point);
+                }
             }
         }
     }
