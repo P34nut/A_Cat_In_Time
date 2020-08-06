@@ -16,8 +16,10 @@ public class PCRotation : MonoBehaviour
     void Update()
     {
 
-           Vector3 v3 = new Vector3(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"), 0.0f);
-            transform.Rotate(v3 * speed * Time.deltaTime);
+           Vector3 pan = new Vector3(0, Input.GetAxis("Horizontal"), 0);
+           Vector3 tilt = new Vector3(Input.GetAxis("Vertical"), 0, 0);
+            transform.Rotate(pan * speed * Time.deltaTime, Space.World);
+            transform.Rotate(tilt * speed * Time.deltaTime, Space.Self);
         
     }
 }
