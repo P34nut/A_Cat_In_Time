@@ -53,11 +53,36 @@ public class TimeTravel : MonoBehaviour {
     private IEnumerator StartTravel() {
         yield return new WaitForSeconds(1f);
         //EKELHAFT. HARDCODED. DIRTY. PAH!
-        if (SceneManager.GetActiveScene().name == "Testlauf_2020") {
-            SceneManager.LoadScene("Testlauf_1600");
-        } else {
-            SceneManager.LoadScene("Testlauf_2020");
+
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 1:
+                SceneManager.LoadScene(2);
+                break;
+            case 2:
+                SceneManager.LoadScene(1);
+                break;
+            case 3:
+                SceneManager.LoadScene(4);
+                break;
+            case 4:
+                SceneManager.LoadScene(3);
+                break;
+            case 5:
+                SceneManager.LoadScene(6);
+                break;
+            case 6:
+                SceneManager.LoadScene(5);
+                break;
+            case 7:
+                SceneManager.LoadScene(8);
+                break;
+            case 8:
+                SceneManager.LoadScene(7);
+                break;
+
         }
+
     }
 
 

@@ -61,6 +61,7 @@ public class SimonSays : MonoBehaviour
         StopAllCoroutines();
         animator.Play("Idle");
         SettingsHandler.Instance.didRiddle[1] = true;
+        showTokenUI.Instance.setTokenUI(1);
     }
 
     void GameOver()
