@@ -11,6 +11,7 @@ public class SimonSays : MonoBehaviour
     //public Sprite[] sprites;          //Sprites zur besseren Darstellung der Tanzschritte hinzufügen
 
     private int bleepCount;
+    private int roundCount;
 
     List<int> bleeps;
     List<int> playerBleeps;
@@ -55,6 +56,13 @@ public class SimonSays : MonoBehaviour
         playerButtons.Add(playerButton);
     }
 
+    void Win()
+    {
+        StopAllCoroutines();
+        animator.Play("Idle");
+        SettingsHandler.Instance.didRiddle[1] = true;
+    }
+
     void GameOver()
     {
         Debug.Log("GAME OVER");
@@ -90,7 +98,17 @@ public class SimonSays : MonoBehaviour
 
         if (bleeps.Count == playerBleeps.Count)
         {
-            StartCoroutine(IESimonSays());
+
+            roundCount++;
+
+            if (roundCount == 4)
+            {
+                Win();
+            }
+            else
+            {
+                StartCoroutine(IESimonSays());
+            }
         }
 
     }

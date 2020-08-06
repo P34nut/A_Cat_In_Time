@@ -71,6 +71,7 @@ public class WheatContainerRiddle : MonoBehaviour
 
     void Win() {
         Debug.Log("Kornmarkträtsel gewonnen!");
+        SettingsHandler.Instance.didRiddle[0] = true;
         //Run win code!! Feuerwerk!!!
     }
 
