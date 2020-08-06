@@ -56,7 +56,7 @@ public class WheatContainerRiddle : MonoBehaviour
     }
 
     void to2020() {
-        StartCoroutine(GameObject.Find("TimeTravel").GetComponent<TimeTravel>().StartTravel());
+        StartCoroutine(GameObject.Find("passout").GetComponent<TimeTravel>().StartTravel());
     }
 
     void Update()

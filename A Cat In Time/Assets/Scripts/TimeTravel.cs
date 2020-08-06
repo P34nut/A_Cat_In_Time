@@ -12,6 +12,7 @@ public class TimeTravel : MonoBehaviour {
     [SerializeField]
     private Image passout;
 
+    public static TimeTravel Instance;
 
     private bool initiatedTravel = false;
     private Color passoutColor;
@@ -24,9 +25,22 @@ public class TimeTravel : MonoBehaviour {
 
     private float blinkGradientPosition;
 
+    private void Awake()
+    {
+        Instance = this;
+        SceneManager.sceneLoaded += OnSceneLoad;
+    }
+
+    private void OnSceneLoad(Scene arg0, LoadSceneMode arg1)
+    {
+        mainCam = Camera.main;
+        initiatedTravel = false;
+        blinkGradientPosition = 0f;
+    }
+
     private void Start() {
 
-        mainCam = Camera.main;
+        
         passoutColor = new Color(0, 0, 0, 1);
     }
 
@@ -48,7 +62,10 @@ public class TimeTravel : MonoBehaviour {
     private void OnMouseDown() {
         StartCoroutine(StartTravel());
     }
-
+    
+    public void DoIt() {
+        StartCoroutine(StartTravel());
+    }
     //thIs Is wHErE tHe mAGiC HapENs
     public IEnumerator StartTravel() {
         initiatedTravel = true;
