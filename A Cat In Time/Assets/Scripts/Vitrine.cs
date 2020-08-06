@@ -7,11 +7,23 @@ public class Vitrine : MonoBehaviour
 {
     public GameObject cat;
     public GameObject[] tokens;
+    public GameObject text;
 
     private void OnMouseDown()
     {
         Debug.Log("Clicked Vitrine");
         cat.GetComponent<CatMoveTo>().BeginMovement();
+        StartCoroutine(ShowText());
+    }
+
+    private IEnumerator ShowText()
+    {
+        text.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+
+        text.SetActive(false);
+
     }
 
     private void Awake()
