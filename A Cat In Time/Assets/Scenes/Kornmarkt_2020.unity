@@ -7584,6 +7584,8 @@ MonoBehaviour:
   fillstate: 1
   Fractions: 6
   animationSpeed: 2
+  ContainerID: 0
+  wheatContainerRiddle: {fileID: 0}
 --- !u!33 &8921783928237271300
 MeshFilter:
   m_ObjectHideFlags: 0

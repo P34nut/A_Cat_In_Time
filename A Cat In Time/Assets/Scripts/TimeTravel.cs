@@ -64,13 +64,16 @@ public class TimeTravel : MonoBehaviour {
         passout.color = passoutColor;
     }
 
-    public void DoIt() {
-        initiatedTravel = true;
+    private void OnMouseDown() {
         StartCoroutine(StartTravel());
     }
-
+    
+    public void DoIt() {
+        StartCoroutine(StartTravel());
+    }
     //thIs Is wHErE tHe mAGiC HapENs
-    private IEnumerator StartTravel() {
+    public IEnumerator StartTravel() {
+        initiatedTravel = true;
         yield return new WaitForSeconds(1f);
         //EKELHAFT. HARDCODED. DIRTY. PAH!
 
