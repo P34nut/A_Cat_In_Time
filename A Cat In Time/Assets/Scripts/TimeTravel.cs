@@ -25,6 +25,7 @@ public class TimeTravel : MonoBehaviour {
     private float blinkGradientPosition;
 
     private void Start() {
+
         mainCam = Camera.main;
         passoutColor = new Color(0, 0, 0, 1);
     }

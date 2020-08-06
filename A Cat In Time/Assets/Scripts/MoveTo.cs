@@ -28,6 +28,7 @@ public class MoveTo : MonoBehaviour
             //Wird ein UI geklickt? Wenn ja dann don't move
             if (EventSystem.current.IsPointerOverGameObject())
             {
+                Debug.Log("XXXX");
                 return;
             }
             
