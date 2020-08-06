@@ -23,14 +23,25 @@ public class CatMoveTo : MonoBehaviour
         cat.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BeginMovement()
     {
-        if (target!=null && interactedVitrine)
+        interactedVitrine = true;
+
+        if (target != null && interactedVitrine)
         {
             cat.SetActive(true);
             agent.SetDestination(target.position);
             agent.updateRotation = true;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (agent.remainingDistance == 0 && interactedVitrine)
+        {
+            Debug.Log("Arrived");
+            cat.SetActive(false);
         }
     }
 

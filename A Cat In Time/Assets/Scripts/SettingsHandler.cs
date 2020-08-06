@@ -7,6 +7,7 @@ public class SettingsHandler : MonoBehaviour
 {
     public static SettingsHandler Instance;
     public bool[] wasInRoom = new bool[4];
+    public bool[] didRiddle = new bool[4];
 
 
     private void Awake()
@@ -20,17 +21,7 @@ public class SettingsHandler : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
