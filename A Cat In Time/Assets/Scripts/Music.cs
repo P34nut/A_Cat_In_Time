@@ -53,6 +53,7 @@ public class Music : MonoBehaviour
         float step_interval = seconds / 20.0f;
         float vol_interval = musicVolume / 20.0f;
 
+        audioB.time = audioA.time;
         audioB.Play();
 
         for (int i = 0; i < 20; i++)
@@ -115,6 +116,12 @@ public class Music : MonoBehaviour
     {
         audioSourceA.UnPause();
         audioSourceB.UnPause();
+    }
+
+    private void Update()
+    {
+        Debug.Log("TimeA: " + audioSourceA.time);
+        Debug.Log("TimeB: " + audioSourceB.time);
     }
 
 }

@@ -10,6 +10,11 @@ public class TimeTravel : MonoBehaviour {
     private Camera mainCam;
 
     [SerializeField]
+    private AudioClip[] audioClips;
+
+    private AudioSource audioSource;
+
+    [SerializeField]
     private Image passout;
 
     public static TimeTravel Instance;
@@ -40,7 +45,7 @@ public class TimeTravel : MonoBehaviour {
 
     private void Start() {
 
-        
+        audioSource = GetComponent<AudioSource>();
         passoutColor = new Color(0, 0, 0, 1);
     }
 
@@ -72,27 +77,43 @@ public class TimeTravel : MonoBehaviour {
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 1:
+                audioSource.clip = audioClips[0];
+                audioSource.Play();
                 SceneManager.LoadScene(2);
                 break;
             case 2:
+                audioSource.clip = audioClips[1];
+                audioSource.Play();
                 SceneManager.LoadScene(1);
                 break;
             case 3:
+                audioSource.clip = audioClips[0];
+                audioSource.Play();
                 SceneManager.LoadScene(4);
                 break;
             case 4:
+                audioSource.clip = audioClips[1];
+                audioSource.Play();
                 SceneManager.LoadScene(3);
                 break;
             case 5:
+                audioSource.clip = audioClips[0];
+                audioSource.Play();
                 SceneManager.LoadScene(6);
                 break;
             case 6:
+                audioSource.clip = audioClips[1];
+                audioSource.Play();
                 SceneManager.LoadScene(5);
                 break;
             case 7:
+                audioSource.clip = audioClips[0];
+                audioSource.Play();
                 SceneManager.LoadScene(8);
                 break;
             case 8:
+                audioSource.clip = audioClips[1];
+                audioSource.Play();
                 SceneManager.LoadScene(7);
                 break;
 
