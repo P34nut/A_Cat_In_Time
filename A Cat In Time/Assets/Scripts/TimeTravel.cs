@@ -7,7 +7,11 @@ using UnityEngine.UI;
 public class TimeTravel : MonoBehaviour {
     private bool travelComplete = true;     //damit man nicht spammen kann
     private Vector3 newPos;
+    private Quaternion newRot;
     private Camera mainCam;
+    private Transform player;
+
+    public GameObject playerprefab;
 
     [SerializeField]
     private AudioClip[] audioClips;
@@ -34,10 +38,24 @@ public class TimeTravel : MonoBehaviour {
     {
         Instance = this;
         SceneManager.sceneLoaded += OnSceneLoad;
+        newPos = new Vector3(-13f, 1.55f, -6.6f);
+        newRot = new Quaternion(0, 0, 0,0);
     }
 
     private void OnSceneLoad(Scene arg0, LoadSceneMode arg1)
     {
+        if (!GameObject.FindGameObjectWithTag("Player"))
+        {
+            GameObject g = Instantiate<GameObject>(playerprefab);
+            player = g.transform;
+        }
+        else
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        
+        player.position = newPos;
+        player.rotation = newRot;
         mainCam = Camera.main;
         initiatedTravel = false;
         blinkGradientPosition = 0f;
@@ -90,6 +108,8 @@ public class TimeTravel : MonoBehaviour {
     //thIs Is wHErE tHe mAGiC HapENs
     public IEnumerator StartTravel() {
         initiatedTravel = true;
+        newPos = player.position;
+        newRot = player.rotation;
         yield return new WaitForSeconds(1f);
         //EKELHAFT. HARDCODED. DIRTY. PAH!
 

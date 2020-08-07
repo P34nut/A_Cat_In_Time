@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1dc292f00f7b54cb833776c858a1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  supportsGyro: 0
   _smoothing: 0.15
 --- !u!1 &1671885079643663405
 GameObject:
@@ -142,7 +143,7 @@ GameObject:
   - component: {fileID: 1671885079643663402}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
