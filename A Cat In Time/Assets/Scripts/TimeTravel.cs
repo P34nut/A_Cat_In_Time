@@ -11,8 +11,6 @@ public class TimeTravel : MonoBehaviour {
     private Camera mainCam;
     private Transform player;
 
-    public GameObject playerprefab;
-
     [SerializeField]
     private AudioClip[] audioClips;
 
@@ -44,18 +42,9 @@ public class TimeTravel : MonoBehaviour {
 
     private void OnSceneLoad(Scene arg0, LoadSceneMode arg1)
     {
-        if (!GameObject.FindGameObjectWithTag("Player"))
-        {
-            GameObject g = Instantiate<GameObject>(playerprefab);
-            player = g.transform;
-        }
-        else
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         player.position = newPos;
-        player.rotation = newRot;
+        //player.rotation = newRot;
         mainCam = Camera.main;
         initiatedTravel = false;
         blinkGradientPosition = 0f;
