@@ -12,12 +12,17 @@ public class showTokenUI : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void setTokenUI(int index)
     {
-        tokenImages[index].sprite = tokenSprites[index]; 
+        tokenImages[index].sprite = tokenSprites[index];
+        if (!gameObject.activeInHierarchy)
+        {
+            gameObject.SetActive(true);
+        }
+        
     }
 
     // Start is called before the first frame update

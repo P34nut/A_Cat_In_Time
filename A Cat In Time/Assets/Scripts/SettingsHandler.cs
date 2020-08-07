@@ -30,6 +30,11 @@ public class SettingsHandler : MonoBehaviour
         {
             case 1:
                 wasInRoom[0] = true;
+                if (!gameObject.GetComponent<ChangeRoom>())
+                {
+                    gameObject.AddComponent<ChangeRoom>();
+                }
+                
                 break;
             case 3:
                 wasInRoom[1] = true;

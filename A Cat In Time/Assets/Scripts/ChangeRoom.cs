@@ -6,20 +6,42 @@ using UnityEngine.UI;
 
 public class ChangeRoom : MonoBehaviour
 {
-    public GameObject[] buttons = new GameObject[4];
-    public GameObject chooseRoomUI;
+    public static ChangeRoom Instance;
+
+    private GameObject[] buttons = new GameObject[4];
+    private GameObject chooseRoomUI;
 
     [SerializeField]
     private bool didRiddle = false;
 
-    private void OnMouseDown()
+    private void OnEnable()
     {
-        Debug.Log("MouseDown");
+        DontDestroyOnLoad(gameObject);
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        chooseRoomUI = GameObject.Find("ChangeRoomUI");
+        buttons[0] = GameObject.Find("ToKornmarkt");
+        buttons[1] = GameObject.Find("ToTanzsaal");
+        buttons[2] = GameObject.Find("ToBürgerstube");
+        buttons[3] = GameObject.Find("ToAbort");
+
+        chooseRoomUI.SetActive(false);
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(false);
+        }
+    }
+
+    public void Clicked()
+    {
         if (SceneManager.GetActiveScene().buildIndex != 1)
         {
             prepareUI();
         }
-        else if (didRiddle)
+        else if (SettingsHandler.Instance.didRiddle[0])
         {
             prepareUI();
         }   
@@ -37,7 +59,7 @@ public class ChangeRoom : MonoBehaviour
                         buttons[i].SetActive(true);
                     }
                 }
-                if (didRiddle)
+                if (SettingsHandler.Instance.didRiddle[0])
                 {
                     buttons[1].SetActive(true);
                 }
@@ -50,7 +72,7 @@ public class ChangeRoom : MonoBehaviour
                         buttons[i].SetActive(true);
                     }
                 }
-                if (didRiddle)
+                if (SettingsHandler.Instance.didRiddle[1])
                 {
                     buttons[2].SetActive(true);
                 }
@@ -63,7 +85,7 @@ public class ChangeRoom : MonoBehaviour
                         buttons[i].SetActive(true);
                     }
                 }
-                if (didRiddle)
+                if (SettingsHandler.Instance.didRiddle[2])
                 {
                     buttons[3].SetActive(true);
                 }
@@ -81,11 +103,6 @@ public class ChangeRoom : MonoBehaviour
 
         chooseRoomUI.SetActive(true);
 
-    }
-
-    public void setDidRiddle()
-    {
-        didRiddle = true;
     }
 
 }

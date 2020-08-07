@@ -120,8 +120,6 @@ public class Music : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("TimeA: " + audioSourceA.time);
-        Debug.Log("TimeB: " + audioSourceB.time);
     }
 
 }
