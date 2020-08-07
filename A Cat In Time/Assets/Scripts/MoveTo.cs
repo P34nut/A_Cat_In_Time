@@ -10,6 +10,16 @@ public class MoveTo : MonoBehaviour
     Transform target;
     LayerMask mask;
     LayerMask dontMoveMask;
+
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +36,7 @@ public class MoveTo : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //Wird ein UI geklickt? Wenn ja dann don't move
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (IsPointerOverUIObject())
             {
                 
                 return;

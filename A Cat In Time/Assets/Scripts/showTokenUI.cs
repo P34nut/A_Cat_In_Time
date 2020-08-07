@@ -12,16 +12,16 @@ public class showTokenUI : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     public void setTokenUI(int index)
     {
         tokenImages[index].sprite = tokenSprites[index];
-        if (!gameObject.activeInHierarchy)
-        {
-            gameObject.SetActive(true);
-        }
+        //if (!gameObject.activeInHierarchy)
+        //{
+        //    gameObject.SetActive(true);
+        //}
         
     }
 
