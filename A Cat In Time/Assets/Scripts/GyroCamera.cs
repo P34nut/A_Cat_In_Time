@@ -52,6 +52,10 @@ public class GyroCamera : MonoBehaviour
 
             transform.rotation = Quaternion.Slerp(transform.rotation, _rawGyroRotation.rotation, _smoothing);
         }
+        else
+        {
+            gameObject.AddComponent<PCRotation>();
+        }
         
     }
 
