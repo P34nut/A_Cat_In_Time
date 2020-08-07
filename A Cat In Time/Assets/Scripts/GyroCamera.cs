@@ -12,6 +12,7 @@ public class GyroCamera : MonoBehaviour
     private float _calibrationYAngle = 0f;
     private Transform _rawGyroRotation;
     private float _tempSmoothing;
+    [SerializeField]
     private bool supportsGyro;
 
     // SETTINGS
