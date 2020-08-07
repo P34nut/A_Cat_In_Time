@@ -28,6 +28,10 @@ public class GyroCamera : MonoBehaviour
         {
             supportsGyro = true;
         }
+        else
+        {
+            gameObject.AddComponent<PCRotation>();
+        }
         Input.gyro.enabled = true;
         Application.targetFrameRate = 60;
         _initialYAngle = transform.eulerAngles.y;
@@ -51,10 +55,6 @@ public class GyroCamera : MonoBehaviour
             ApplyCalibration();
 
             transform.rotation = Quaternion.Slerp(transform.rotation, _rawGyroRotation.rotation, _smoothing);
-        }
-        else
-        {
-            gameObject.AddComponent<PCRotation>();
         }
         
     }
