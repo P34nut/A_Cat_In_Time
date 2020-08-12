@@ -9,6 +9,8 @@ public class PositionPuzzle : MonoBehaviour
     private Transform playerTransform;
     private Transform mainCam;
 
+    public bool startRiddle;
+
 
     public static bool AlmostEqual(Vector3 v1, Vector3 v2, float precision)
     {
@@ -44,9 +46,26 @@ public class PositionPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((targetTransform.position-playerTransform.position).sqrMagnitude < 1f && AlmostEqual(targetTransform.rotation.eulerAngles, mainCam.rotation.eulerAngles, 25f))
+        if (startRiddle)
         {
-            Debug.Log("Is close");
+            if ((targetTransform.position - playerTransform.position).sqrMagnitude < 1f && AlmostEqual(targetTransform.rotation.eulerAngles, mainCam.rotation.eulerAngles, 25f))
+            {
+                WonGame();
+                Debug.Log("Is close");
+            }
         }
     }
+
+    void WonGame()
+    {
+        SettingsHandler.Instance.didRiddle[2] = true;
+        showTokenUI.Instance.setTokenUI(2);
+        Invoke(nameof(to2020), 3f);
+    }
+
+    void to2020()
+    {
+        TimeTravel.Instance.DoIt();
+    }
+
 }

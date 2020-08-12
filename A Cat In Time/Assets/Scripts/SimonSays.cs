@@ -62,6 +62,12 @@ public class SimonSays : MonoBehaviour
         animator.Play("Idle");
         SettingsHandler.Instance.didRiddle[1] = true;
         showTokenUI.Instance.setTokenUI(1);
+        Invoke(nameof(to2020), 3f);
+    }
+
+    void to2020()
+    {
+        TimeTravel.Instance.DoIt();
     }
 
     void GameOver()
