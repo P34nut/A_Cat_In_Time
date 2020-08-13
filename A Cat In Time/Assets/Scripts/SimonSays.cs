@@ -26,17 +26,21 @@ public class SimonSays : MonoBehaviour
 
     public void StartGame()
     {
-        bleepCount = 3;
-        playerButtons = new List<GameObject>();
+        if (!SettingsHandler.Instance.didRiddle[1])
+        {
+            bleepCount = 3;
+            playerButtons = new List<GameObject>();
 
-        panel.gameObject.SetActive(true);
+            panel.gameObject.SetActive(true);
 
-        CreatePlayerButtons("1", 0);
-        CreatePlayerButtons("2", 1);
-        CreatePlayerButtons("3", 2);
-        CreatePlayerButtons("4", 3);
+            CreatePlayerButtons("1", 0);
+            CreatePlayerButtons("2", 1);
+            CreatePlayerButtons("3", 2);
+            CreatePlayerButtons("4", 3);
 
-        StartCoroutine(IESimonSays());
+            StartCoroutine(IESimonSays());
+        }
+        
     }
 
     //Instantiate Button

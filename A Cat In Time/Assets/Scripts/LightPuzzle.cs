@@ -24,6 +24,8 @@ public class LightPuzzle : MonoBehaviour
     private int counter = 0;
     [SerializeField]
     private int amountOfObjects;
+    [SerializeField]
+    private bool startRiddle;
 
     // Start is called before the first frame update
     void Start()
@@ -38,10 +40,20 @@ public class LightPuzzle : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
+
         Vector3 p1 = transform.position;
         RaycastHit hit;
+        //RaycastHit hitWall;
 
-        if (Physics.Raycast(p1,transform.forward,out hit, pointLight.range,LayerMask.GetMask("Riddle")))
+        /*if (Physics.Raycast(p1,transform.forward, out hitWall, Mathf.Infinity, LayerMask.GetMask("DontMove")))
+        {
+            Debug.Log("WALL");
+            pointLight.range = hitWall.distance +0.5f;
+        }*/
+
+        if (Physics.Raycast(p1,transform.forward,out hit, pointLight.range,LayerMask.GetMask("Riddle")) && startRiddle)
         {
             Debug.Log("HIT");
             Debug.DrawRay(p1, transform.forward * pointLight.range, Color.green);
@@ -106,6 +118,7 @@ public class LightPuzzle : MonoBehaviour
             DeEmitObjects(obj);
             counter = 0;
             foundObj = new bool[amountOfObjects];
+            //startRiddle = false;                      //je nachdem ob man Rätsel neustarten soll oder nicht
         }
 
 
@@ -116,11 +129,22 @@ public class LightPuzzle : MonoBehaviour
         SettingsHandler.Instance.didRiddle[3] = true;
         showTokenUI.Instance.setTokenUI(3);
         Invoke(nameof(To2020), 3f);
+        startRiddle = false;
     }
 
     void To2020()
     {
         TimeTravel.Instance.DoIt();
     }
+
+    public void StartGame()
+    {
+        if (!SettingsHandler.Instance.didRiddle[3])
+        {
+            startRiddle = true;
+        }
+        
+    }
+
 
 }

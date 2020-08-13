@@ -40,10 +40,17 @@ public class WheatContainer : MonoBehaviour
 
     
     void OnMouseDown() {
-        if (wheatContainerRiddle.scoopFillstate == 0) {
-            wheatContainerRiddle.TakeScoopFromContainer(ContainerID);
-        } else {
-            wheatContainerRiddle.AddScoopToContainer(ContainerID);
+
+        if (wheatContainerRiddle.startRiddle)
+        {
+            if (wheatContainerRiddle.scoopFillstate == 0)
+            {
+                wheatContainerRiddle.TakeScoopFromContainer(ContainerID);
+            }
+            else
+            {
+                wheatContainerRiddle.AddScoopToContainer(ContainerID);
+            }
         }
     }
 }

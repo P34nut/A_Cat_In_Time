@@ -12,6 +12,7 @@ public class WheatContainerRiddle : MonoBehaviour
     [SerializeField]
     int scoopSize; //in Fractions
     public int scoopFillstate;
+    public bool startRiddle;
 
     float animationSpeed = 2;
 
@@ -53,6 +54,7 @@ public class WheatContainerRiddle : MonoBehaviour
         Invoke(nameof(to2020), 3f);
         SettingsHandler.Instance.didRiddle[0] = true;
         showTokenUI.Instance.setTokenUI(0);
+        startRiddle = false;
     }
 
     void to2020() {
@@ -64,4 +66,13 @@ public class WheatContainerRiddle : MonoBehaviour
         Vector3 newScale = new Vector3(1, (float)scoopFillstate / scoopSize, 1);
         Scoop.transform.localScale = Vector3.Lerp(Scoop.transform.localScale, newScale, animationSpeed * Time.deltaTime);
     }
+
+    public void StartGame()
+    {
+        if (!SettingsHandler.Instance.didRiddle[0])
+        {
+            startRiddle = true;
+        }
+        
+    } 
 }
