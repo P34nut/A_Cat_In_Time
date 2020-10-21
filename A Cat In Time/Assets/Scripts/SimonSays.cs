@@ -106,6 +106,8 @@ public class SimonSays : MonoBehaviour
 
         ShowPose(index);
 
+        StartCoroutine(Delay(.5f));
+
         playerBleeps.Add(index);
 
         if (bleeps[playerBleeps.Count -1] != index)
@@ -147,9 +149,12 @@ public class SimonSays : MonoBehaviour
             ShowPose(bleeps[i]); //////////////////////////////////////////////////////////
             //AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0); /////////////////////////////////////////
             //yield return new WaitForSeconds(clipInfos[0].clip.length);
-            yield return new WaitForSeconds(1f); 
+            yield return new WaitForSeconds(.5f);
+            meshRender.material = materials[0];
+            yield return new WaitForSeconds(.5f);
         }
         Debug.Log("--------------------------------------------------");
+        meshRender.material = materials[0];
         inputEnabled = true;
 
         yield return null;
@@ -180,6 +185,9 @@ public class SimonSays : MonoBehaviour
                 meshRender.material = materials[4];
                 Debug.Log("SimonSays: 4");
                 break;
+            case 4:
+                meshRender.material = materials[0];
+                break;
         }
 
         //PlayAudio();
@@ -202,6 +210,14 @@ public class SimonSays : MonoBehaviour
         }
 
         bleepCount++;
+    }
+
+    IEnumerator Delay(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        meshRender.material = materials[0];
+
     }
 
 
