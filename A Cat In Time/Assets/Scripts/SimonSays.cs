@@ -27,6 +27,11 @@ public class SimonSays : MonoBehaviour
 
     //public Animator animator;
 
+    private void OnMouseDown()
+    {
+        StartGame();
+    }
+
     public void StartGame()
     {
         //if (!SettingsHandler.Instance.didRiddle[1] && !startedGame)

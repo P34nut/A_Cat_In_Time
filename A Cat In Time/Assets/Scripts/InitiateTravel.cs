@@ -6,7 +6,7 @@ public class InitiateTravel : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        Debug.Log("CCCC");
+        Debug.Log("Initiate TimeTravel");
         TimeTravel.Instance.DoIt();
     }
 }

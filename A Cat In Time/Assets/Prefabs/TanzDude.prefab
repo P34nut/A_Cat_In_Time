@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5800747518952862688}
   - component: {fileID: 5800747518952862702}
   - component: {fileID: 5800747518952862689}
+  - component: {fileID: 7404138974127920470}
   m_Layer: 0
   m_Name: TanzDude
   m_TagString: Untagged
@@ -94,3 +95,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7404138974127920470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5800747518952862703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9440462fae1f4d645aa6ccccf5be6f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefab: {fileID: 681925828673892994, guid: 70a676c2949cf474e97140333847eeeb,
+    type: 3}
+  panel: {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: 8aaea5a3eda2ef14bb2127c42ad7b2bc, type: 2}
+  - {fileID: 2100000, guid: 5e17bde096be72c42bf1b6c6b4aee463, type: 2}
+  - {fileID: 2100000, guid: 961d4b1c8a3552642bab2d9712bd5171, type: 2}
+  - {fileID: 2100000, guid: de085dc980c942745bb7b1a4dae95426, type: 2}
+  - {fileID: 2100000, guid: a4e81d69332aa2f4098c7e27aa99ef28, type: 2}
+  sprites:
+  - {fileID: 21300000, guid: 538f40986008bd2408a546e27fbd8b7c, type: 3}
+  - {fileID: 21300000, guid: 569c52c8386c8494ab6ae9c9766728ae, type: 3}
+  - {fileID: 21300000, guid: 94d32fa58e5925f47a445b270c0bb640, type: 3}
+  - {fileID: 21300000, guid: b338661f844d86a4f8006815b5a69617, type: 3}
+  meshRender: {fileID: 0}
