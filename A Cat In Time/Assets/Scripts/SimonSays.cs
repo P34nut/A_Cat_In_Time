@@ -8,7 +8,9 @@ public class SimonSays : MonoBehaviour
 {
     public GameObject buttonPrefab;
     public Transform panel;
-    //public Sprite[] sprites;          //Sprites zur besseren Darstellung der Tanzschritte hinzufügen
+    public Material[] materials;
+    public Sprite[] sprites;
+    public MeshRenderer meshRender;
 
     private int bleepCount;
     private int roundCount;
@@ -21,13 +23,15 @@ public class SimonSays : MonoBehaviour
 
     bool inputEnabled = false;
     bool gameOver = false;
+    bool startedGame = false;
 
-    public Animator animator;
+    //public Animator animator;
 
     public void StartGame()
     {
-        if (!SettingsHandler.Instance.didRiddle[1])
-        {
+        //if (!SettingsHandler.Instance.didRiddle[1] && !startedGame)
+        //{
+            startedGame = true;
             bleepCount = 3;
             playerButtons = new List<GameObject>();
 
@@ -39,7 +43,7 @@ public class SimonSays : MonoBehaviour
             CreatePlayerButtons("4", 3);
 
             StartCoroutine(IESimonSays());
-        }
+        //}
         
     }
 
@@ -49,8 +53,7 @@ public class SimonSays : MonoBehaviour
 
         GameObject playerButton = Instantiate<GameObject>(buttonPrefab, panel);
         playerButton.name = name;
-        playerButton.GetComponentInChildren<TMP_Text>().text = name;
-        //playerButton.GetComponent<Image>().sprite = sprites[index];               //Füge Sprite dem Button hinzu
+        playerButton.GetComponent<Image>().sprite = sprites[index];
 
         playerButton.GetComponent<Button>().onClick.AddListener(() =>
         {
@@ -63,7 +66,9 @@ public class SimonSays : MonoBehaviour
     void Win()
     {
         StopAllCoroutines();
-        animator.Play("Idle");
+        //animator.Play("Idle"); ///////////////////////////////////////////////////////
+        meshRender.material = materials[0];
+
         SettingsHandler.Instance.didRiddle[1] = true;
         showTokenUI.Instance.setTokenUI(1);
         Invoke(nameof(to2020), 3f);
@@ -86,8 +91,10 @@ public class SimonSays : MonoBehaviour
         }
         playerButtons.Clear();
         panel.gameObject.SetActive(false);
-        animator.Play("Idle");
+        //animator.Play("Idle"); ////////////////////////////////////////////////
+        meshRender.material = materials[0];
         gameOver = false;
+        startedGame = false;
     }
 
     void OnButtonClicked(int index)
@@ -97,7 +104,7 @@ public class SimonSays : MonoBehaviour
             return;
         }
 
-        ShowAnim(index);
+        ShowPose(index);
 
         playerBleeps.Add(index);
 
@@ -137,9 +144,10 @@ public class SimonSays : MonoBehaviour
         Debug.Log("______________________________________________");
         for (int i = 0; i < bleeps.Count; i++)
         {
-            ShowAnim(bleeps[i]);
-            AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0);
-            yield return new WaitForSeconds(clipInfos[0].clip.length);         
+            ShowPose(bleeps[i]); //////////////////////////////////////////////////////////
+            //AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0); /////////////////////////////////////////
+            //yield return new WaitForSeconds(clipInfos[0].clip.length);
+            yield return new WaitForSeconds(1f); 
         }
         Debug.Log("--------------------------------------------------");
         inputEnabled = true;
@@ -148,29 +156,33 @@ public class SimonSays : MonoBehaviour
 
     }
 
-    void ShowAnim(int index)
+    void ShowPose(int index) ///////////////////////////
     {
         switch (index)
         {
             case 0:
-                animator.Play("Hit");
+                //animator.Play("Hit");
+                meshRender.material = materials[1];
                 Debug.Log("SimonSays: 1");
                 break;
             case 1:
-                animator.Play("Hit2");
+                //animator.Play("Hit2");
+                meshRender.material = materials[2];
                 Debug.Log("SimonSays: 2");
                 break;
             case 2:
-                animator.Play("Spell");
+                //animator.Play("Spell");
+                meshRender.material = materials[3];
                 Debug.Log("SimonSays: 3");
                 break;
             case 3:
-                animator.Play("Death");
+                //animator.Play("Death");
+                meshRender.material = materials[4];
                 Debug.Log("SimonSays: 4");
                 break;
         }
 
-        PlayAudio();
+        //PlayAudio();
         
     }
 
