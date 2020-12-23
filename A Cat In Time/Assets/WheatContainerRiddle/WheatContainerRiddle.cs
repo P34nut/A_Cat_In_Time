@@ -16,6 +16,14 @@ public class WheatContainerRiddle : MonoBehaviour
 
     float animationSpeed = 2;
 
+    private void Awake()
+    {
+        if (!SettingsHandler.Instance.didRiddle[0])
+        {
+            startRiddle = true;
+        }
+    }
+
     //Take scoop of wheat from a container - only possible when scoop is empty
     public void TakeScoopFromContainer(int ct)
     {
@@ -67,12 +75,4 @@ public class WheatContainerRiddle : MonoBehaviour
         Scoop.transform.localScale = Vector3.Lerp(Scoop.transform.localScale, newScale, animationSpeed * Time.deltaTime);
     }
 
-    public void StartGame()
-    {
-        if (!SettingsHandler.Instance.didRiddle[0])
-        {
-            startRiddle = true;
-        }
-        
-    } 
 }
