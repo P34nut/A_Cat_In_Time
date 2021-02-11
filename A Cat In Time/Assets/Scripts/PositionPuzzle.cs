@@ -10,7 +10,7 @@ public class PositionPuzzle : MonoBehaviour
     private Transform mainCam;
     [SerializeField]
     private Transform targetLookAt;
-
+    [SerializeField]
     private bool startRiddle;
 
 
