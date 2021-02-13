@@ -27,6 +27,11 @@ public class LightPuzzle : MonoBehaviour
     [SerializeField]
     private bool startRiddle;
 
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private AudioClip[] audioClips;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +39,7 @@ public class LightPuzzle : MonoBehaviour
         foundObj = new bool[amountOfObjects];
         //correctOrder = new int[4];                //evtl zufällig machen?
         objects = new GameObject[amountOfObjects];
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -98,7 +103,8 @@ public class LightPuzzle : MonoBehaviour
 
         if (id == correctOrder[counter])
         {
-            
+            audioSource.clip = audioClips[counter];
+            audioSource.Play();
             counter++;
             foundObj[id] = true;
 
