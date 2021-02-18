@@ -12,34 +12,21 @@ public class PositionPuzzle : MonoBehaviour
     private Transform targetLookAt;
     [SerializeField]
     private bool startRiddle;
+    private SkinnedMeshRenderer skinned;
+    [SerializeField]
+    int id;
+    bool startBlend = false;
+    float blendValue = 100f;
+    [SerializeField]
+    float blendSpeed;
 
-
-    public static bool AlmostEqual(Vector3 v1, Vector3 v2, float precision)
-    {
-        bool equal = true;
-
-        if (Mathf.Abs(v1.x - v2.x) > precision )
-        {
-            equal = false;
-        }
-
-        if (Mathf.Abs(v1.y - v2.y) > precision )
-        {
-            equal = false;
-        }
-
-        if (Mathf.Abs(v1.z - v2.z) > precision )
-        {
-            equal = false;
-        }
-        return equal;
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         mainCam = Camera.main.transform;
+        skinned = GetComponent<SkinnedMeshRenderer>();
 
         //mainCam.rotation = targetTransform.rotation;
 
@@ -52,32 +39,53 @@ public class PositionPuzzle : MonoBehaviour
         {
             if ((targetTransform.position - playerTransform.position).sqrMagnitude < 1f && AlmostEqual(targetTransform.rotation.eulerAngles, mainCam.rotation.eulerAngles, 25f))
             {
-                WonGame();
+                moveFracture();
+                
                 Debug.Log("Is close");
             }
         }
+
+        if (startBlend && blendValue >= 0f)
+        {
+            mainCam.LookAt(targetLookAt);
+            skinned.SetBlendShapeWeight(0, blendValue);
+            blendValue -= blendSpeed;
+        }
+
     }
 
-    void WonGame()
+    public static bool AlmostEqual(Vector3 v1, Vector3 v2, float precision)
     {
-        SettingsHandler.Instance.didRiddle[2] = true;
-        showTokenUI.Instance.setTokenUI(2);
-        Invoke(nameof(to2020), 3f);
-        startRiddle = false;
-    }
+        bool equal = true;
 
-    void to2020()
-    {
-        TimeTravel.Instance.DoIt();
+        if (Mathf.Abs(v1.x - v2.x) > precision)
+        {
+            equal = false;
+        }
+
+        if (Mathf.Abs(v1.y - v2.y) > precision)
+        {
+            equal = false;
+        }
+
+        if (Mathf.Abs(v1.z - v2.z) > precision)
+        {
+            equal = false;
+        }
+        return equal;
     }
 
     public void StartGame()
     {
-        if (!SettingsHandler.Instance.didRiddle[2])
-        {
-            startRiddle = true;
-        }
-        
+        startRiddle = true;
+    }
+
+    void moveFracture()
+    {
+        //skinned.SetBlendShapeWeight(0, 0);
+        startBlend = true;
+        PositionPuzzleHadler.Instance.isCorrect[id] = true;
+        startRiddle = false;
     }
 
 
