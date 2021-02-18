@@ -1673,10 +1673,10 @@ MonoBehaviour:
   amountOfObjects: 4
   startRiddle: 1
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 3a3e4b8249226de4b8cd721976ce517f, type: 3}
+  - {fileID: 8300000, guid: 4326a0bf458792047b53ae74212efc25, type: 3}
+  - {fileID: 8300000, guid: 6ed0338f5fe452246b9011b3819d4266, type: 3}
+  - {fileID: 8300000, guid: 3786ab1715461f34fb2c9531e9edcb67, type: 3}
 --- !u!82 &369320923
 AudioSource:
   m_ObjectHideFlags: 0
