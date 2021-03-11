@@ -3,7 +3,12 @@ guid: 11958207fef78544da0c466e12b25c46
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: abort_floor
+    second: {fileID: 2100000, guid: d6f94fd8dae2f5d4085147dd0569ef58, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
