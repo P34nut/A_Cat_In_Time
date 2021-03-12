@@ -37,11 +37,16 @@ public class PositionPuzzle : MonoBehaviour
     {
         if (startRiddle)
         {
-            if ((targetTransform.position - playerTransform.position).sqrMagnitude < 1f && AlmostEqual(targetTransform.rotation.eulerAngles, mainCam.rotation.eulerAngles, 25f))
+            /*if ((targetTransform.position - playerTransform.position).sqrMagnitude < 0.5f)
+            {
+                Debug.Log("Postion close");
+            }*/
+
+            if ((targetTransform.position - playerTransform.position).sqrMagnitude < 0.5f && AlmostEqual(targetTransform.rotation.eulerAngles, mainCam.rotation.eulerAngles, 5f))
             {
                 moveFracture();
                 
-                Debug.Log("Is close");
+                
             }
         }
 

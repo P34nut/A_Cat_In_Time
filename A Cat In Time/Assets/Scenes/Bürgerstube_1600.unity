@@ -107,7 +107,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.3
     agentHeight: 1.5
     agentSlope: 45
     agentClimb: 0.4
@@ -115,7 +115,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.1
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 583199908}
   - component: {fileID: 583199907}
   - component: {fileID: 583199911}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ PrefabInstance:
     - target: {fileID: 1671885079643663403, guid: c812d85c3373832419fba5a8e1a3cd58,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.721
+      value: -3.615
       objectReference: {fileID: 0}
     - target: {fileID: 1671885079643663403, guid: c812d85c3373832419fba5a8e1a3cd58,
         type: 3}
@@ -614,7 +614,7 @@ PrefabInstance:
     - target: {fileID: 1671885079643663403, guid: c812d85c3373832419fba5a8e1a3cd58,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.99
+      value: -8.649
       objectReference: {fileID: 0}
     - target: {fileID: 1671885079643663403, guid: c812d85c3373832419fba5a8e1a3cd58,
         type: 3}
