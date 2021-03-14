@@ -27,12 +27,10 @@ public class CheckExistence : MonoBehaviour
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
-            Debug.Log("FIND");
             Player = GameObject.FindGameObjectWithTag("Player");
             
             if (SettingsHandler.Instance.onSpawnLocation)
             {
-                Debug.Log("TRUE");
                 Player.transform.position = SpawnLocation.transform.position;
                 Player.transform.rotation = SpawnLocation.transform.rotation;
                 Player.GetComponent<NavMeshAgent>().Warp(SpawnLocation.transform.position);

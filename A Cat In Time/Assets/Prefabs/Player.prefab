@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247f903cf6ed1214dad3f2765d52a09c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitMat: {fileID: 2100000, guid: 6721ebdb3266e904695f7a02a1d37409, type: 2}
+  emitMat: {fileID: 2100000, guid: c6d843b1ebfbc7b48a1c9a77fecf8b01, type: 2}
   unemitMat: {fileID: 0}
   foundObj: 
   correctOrder: 00000000010000000200000003000000

@@ -37,6 +37,8 @@ public class TimeTravel : MonoBehaviour {
 
     private float blinkGradientPosition;
 
+    public bool isAbort;
+
     private void Awake()
     {
         Instance = this;
@@ -107,6 +109,7 @@ public class TimeTravel : MonoBehaviour {
         StartCoroutine(StartTravel());
     }
 
+
     void SoundEffect()
     {
         if(SceneManager.GetActiveScene().buildIndex % 2 == 0)
@@ -148,13 +151,21 @@ public class TimeTravel : MonoBehaviour {
                 SceneManager.LoadScene(3);
                 break;
             case 5:
-                SceneManager.LoadScene(6);
+                if (!isAbort)
+                {
+                    SceneManager.LoadScene(6);
+                }
+                else
+                {
+                    SettingsHandler.Instance.onSpawnLocation = true;
+                    SceneManager.LoadScene(7);
+                }
                 break;
             case 6:
                 SceneManager.LoadScene(5);
                 break;
             case 7:
-                SceneManager.LoadScene(8);
+                SceneManager.LoadScene(5);
                 break;
             case 8:
                 SceneManager.LoadScene(7);
