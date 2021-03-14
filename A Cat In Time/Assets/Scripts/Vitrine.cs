@@ -8,6 +8,7 @@ public class Vitrine : MonoBehaviour
     public GameObject cat;
     public GameObject[] tokens;
     public GameObject text;
+    public GameObject outlineObject;
 
     private void OnMouseDown()
     {
@@ -29,6 +30,7 @@ public class Vitrine : MonoBehaviour
     private void Awake()
     {
         showTokens();
+        outlineObject.SetActive(false);
     }
 
     void showTokens()
