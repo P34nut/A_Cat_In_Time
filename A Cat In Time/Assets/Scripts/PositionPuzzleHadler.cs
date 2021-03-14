@@ -8,6 +8,7 @@ public class PositionPuzzleHadler : MonoBehaviour
     PositionPuzzle[] scripts;
     public static PositionPuzzleHadler Instance;
     public bool[] isCorrect;
+    bool b = true;
 
     private void Awake()
     {
@@ -22,8 +23,9 @@ public class PositionPuzzleHadler : MonoBehaviour
 
     private void Update()
     {
-        if (isCorrect[0] && isCorrect[1] && isCorrect[2] && isCorrect[3])
+        if (isCorrect[0] && isCorrect[1] && isCorrect[2] && isCorrect[3] && b)
         {
+            b = false;
             WonGame();
         }
     }
