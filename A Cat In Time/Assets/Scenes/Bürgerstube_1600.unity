@@ -3049,7 +3049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 6895273747265342880}
-  targetLookAt: {fileID: 0}
+  targetLookAt: {fileID: 8045082611935564235}
   startRiddle: 0
   id: 0
   blendSpeed: 1
