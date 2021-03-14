@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SettingsHandler : MonoBehaviour
 {
+    
     public static SettingsHandler Instance;
     public bool[] wasInRoom = new bool[4];
     public bool[] didRiddle = new bool[4];
+    public bool onSpawnLocation = true;
 
 
     private void Awake()

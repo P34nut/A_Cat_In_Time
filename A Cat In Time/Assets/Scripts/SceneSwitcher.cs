@@ -7,6 +7,8 @@ public class SceneSwitcher : MonoBehaviour
 {
     public void SwitchScene(int goToScene)
     {
+        SettingsHandler.Instance.onSpawnLocation = true;
         SceneManager.LoadScene(goToScene);
+        
     }
 }

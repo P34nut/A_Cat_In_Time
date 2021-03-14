@@ -6,10 +6,15 @@ using UnityEngine.UI;
 
 public class TimeTravel : MonoBehaviour {
     private bool travelComplete = true;     //damit man nicht spammen kann
-    private Vector3 newPos;
-    private Quaternion newRot;
+    //private Vector3 newPos;
+    //private Quaternion newRot;
     private Camera mainCam;
-    private Transform player;
+    //private Transform player;
+
+    [SerializeField]
+    private GameObject Licht;
+    [SerializeField]
+    private GameObject Kerze;
 
     [SerializeField]
     private AudioClip[] audioClips;
@@ -36,24 +41,43 @@ public class TimeTravel : MonoBehaviour {
     {
         Instance = this;
         SceneManager.sceneLoaded += OnSceneLoad;
-        newPos = new Vector3(-13f, 1.55f, -6.6f);
-        newRot = new Quaternion(0, 0, 0,0);
+        //newPos = new Vector3(-13f, 1.55f, -6.6f);
+        //newRot = new Quaternion(0, 0, 0,0);
+        
     }
 
     private void OnSceneLoad(Scene arg0, LoadSceneMode arg1)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        player.position = newPos;
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        //player.position = newPos;
         //player.rotation = newRot;
         mainCam = Camera.main;
         initiatedTravel = false;
         blinkGradientPosition = 0f;
+        //mainCam.fieldOfView = 60f;
+
+        if (SceneManager.GetActiveScene().buildIndex != 7 && SceneManager.GetActiveScene().buildIndex != 1)
+        {
+            Licht.SetActive(false);
+            Kerze.SetActive(false);
+        }
+        else if(SceneManager.GetActiveScene().buildIndex == 7)
+        {
+            Licht.SetActive(true);
+            Kerze.SetActive(true);
+        }
+
     }
 
     private void Start() {
 
         audioSource = GetComponent<AudioSource>();
         passoutColor = new Color(0, 0, 0, 1);
+        Licht = GameObject.FindGameObjectWithTag("Licht");
+        Kerze = GameObject.FindGameObjectWithTag("Kerze");
+        Licht.SetActive(false);
+        Kerze.SetActive(false);
+
     }
 
 
@@ -62,6 +86,12 @@ public class TimeTravel : MonoBehaviour {
         if (!initiatedTravel) {
             blinkGradientPosition += 1/blinkduration * Time.deltaTime;
             passoutColor.a = 1f - blinkGradient.Evaluate(blinkGradientPosition).r;
+
+            if (mainCam.fieldOfView > 60f)
+            {
+                mainCam.fieldOfView -= 90 * Time.deltaTime;
+            }
+
         }
         
         if (initiatedTravel) {
@@ -97,8 +127,9 @@ public class TimeTravel : MonoBehaviour {
     //thIs Is wHErE tHe mAGiC HapENs
     public IEnumerator StartTravel() {
         initiatedTravel = true;
-        newPos = player.position;
-        newRot = player.rotation;
+        SettingsHandler.Instance.onSpawnLocation = false;
+        //newPos = player.position;
+        //newRot = player.rotation;
         yield return new WaitForSeconds(1f);
         //EKELHAFT. HARDCODED. DIRTY. PAH!
 
