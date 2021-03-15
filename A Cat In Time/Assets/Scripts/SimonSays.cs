@@ -143,7 +143,7 @@ public class SimonSays : MonoBehaviour
         inputEnabled = false;
 
         //Random nach Seed, dadurch aber jeder Durchlauf gleich. Falls jedes mal anders --> in Start eine RandomZahl erzeugen die als Seed nehmen
-        randomGenerator = new System.Random("SimonSaysACatInTime".GetHashCode()); 
+        randomGenerator = new System.Random("StadtmuseumHFUSimonSays".GetHashCode()); 
 
         SetBleeps();
 
