@@ -5,10 +5,10 @@ using UnityEngine;
 public class LightPuzzle : MonoBehaviour
 {
     [SerializeField]
-    private Material emitMat;
+    private Material[] emitMat;
 
     [SerializeField]
-    private Material unemitMat; //falls alle Objekte ein anderes Material haben --> Array
+    private Material[] unemitMat; //falls alle Objekte ein anderes Material haben --> Array
 
     private Light pointLight;
 
@@ -73,8 +73,9 @@ public class LightPuzzle : MonoBehaviour
 
     void EmitObject(GameObject obj)
     {
-        unemitMat = obj.GetComponent<MeshRenderer>().material;
-        obj.GetComponent<MeshRenderer>().material = emitMat;
+        int id = obj.GetComponent<LightPuzzleID>().ID;
+        unemitMat[id] = obj.GetComponent<MeshRenderer>().material;
+        obj.GetComponent<MeshRenderer>().material = emitMat[id];
         obj.layer = 0;
         StartCoroutine( CheckForWin(obj));
     }
@@ -85,7 +86,7 @@ public class LightPuzzle : MonoBehaviour
         {
             if (objects[i] != null)
             {
-                objects[i].GetComponent<MeshRenderer>().material = unemitMat;
+                objects[i].GetComponent<MeshRenderer>().material = unemitMat[i];
                 objects[i].layer = 10;
             }
             
