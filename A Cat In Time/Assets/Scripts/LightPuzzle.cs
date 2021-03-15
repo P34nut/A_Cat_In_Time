@@ -121,6 +121,8 @@ public class LightPuzzle : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(2f);
+            audioSource.clip = audioClips[4];
+            audioSource.Play();
             DeEmitObjects(obj);
             counter = 0;
             foundObj = new bool[amountOfObjects];
