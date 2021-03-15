@@ -38,6 +38,7 @@ public class GyroCamera : MonoBehaviour
         _initialYAngle = transform.eulerAngles.y;
 
         _rawGyroRotation = new GameObject("GyroRaw").transform;
+        DontDestroyOnLoad(_rawGyroRotation.gameObject);
         _rawGyroRotation.position = transform.position;
         _rawGyroRotation.rotation = transform.rotation;
         //transform.SetParent(_rawGyroRotation);
