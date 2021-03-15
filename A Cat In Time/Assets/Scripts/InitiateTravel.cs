@@ -5,7 +5,7 @@ using UnityEngine;
 public class InitiateTravel : MonoBehaviour
 {
     [SerializeField]
-    bool isAbort;
+    public bool isAbort;
 
     private void OnMouseDown()
     {
