@@ -366,10 +366,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24300002, guid: 32e7ffa3c05fc214d8e123d44d60f32f, type: 2}
   audioClips:
-  - {fileID: 8300000, guid: d410b2e01c108214a95b72844bad0cfe, type: 3}
+  - {fileID: 8300000, guid: d53e4e50b0a701d4988bff53cac53094, type: 3}
   - {fileID: 8300000, guid: d410b2e01c108214a95b72844bad0cfe, type: 3}
   - {fileID: 8300000, guid: f2876b4659f99484bae9c8d43b63b6ae, type: 3}
+  - {fileID: 8300000, guid: 4bed13700b9bbc04e9087aa41d5dc64c, type: 3}
+  - {fileID: 8300000, guid: d53e4e50b0a701d4988bff53cac53094, type: 3}
   - {fileID: 8300000, guid: d410b2e01c108214a95b72844bad0cfe, type: 3}
+  - {fileID: 8300000, guid: f2876b4659f99484bae9c8d43b63b6ae, type: 3}
+  - {fileID: 8300000, guid: 7691d5d88b3720c49b42eba7cf0d0b57, type: 3}
 --- !u!4 &522785547
 Transform:
   m_ObjectHideFlags: 0
@@ -415,6 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wasInRoom: 00000000
   didRiddle: 00000000
+  onSpawnLocation: 1
 --- !u!4 &605469992
 Transform:
   m_ObjectHideFlags: 0
