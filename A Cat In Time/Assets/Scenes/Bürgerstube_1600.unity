@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 583199908}
   - component: {fileID: 583199907}
   - component: {fileID: 583199911}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 078fab4ae5dccbd4b80b5f9cbb3fef0d,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078fab4ae5dccbd4b80b5f9cbb3fef0d, type: 3}
@@ -992,7 +992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6835511943750241579}
   - component: {fileID: 228834065018669716}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2063,7 +2063,7 @@ GameObject:
   - component: {fileID: 5915596510766402804}
   - component: {fileID: 7067412745731353534}
   - component: {fileID: 1733271400866011866}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2227,7 +2227,7 @@ GameObject:
   - component: {fileID: 320649176289268427}
   - component: {fileID: 1096203287000288446}
   - component: {fileID: 2201868255534658960}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2902,7 +2902,7 @@ GameObject:
   - component: {fileID: 8170489417485145633}
   - component: {fileID: 9001573960735221702}
   - component: {fileID: 3406842344383906151}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2997,7 +2997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7821927780963212810}
   - component: {fileID: 3662211397937538151}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3321,7 +3321,7 @@ GameObject:
   - component: {fileID: 994369211787811638}
   - component: {fileID: 5787276905800878965}
   - component: {fileID: 4503536755338203743}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3715,7 +3715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8298888470866966313}
   - component: {fileID: 5203568279997206354}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3902,7 +3902,7 @@ GameObject:
   - component: {fileID: 6135373842825215416}
   - component: {fileID: 377612281841528230}
   - component: {fileID: 5634224978565384332}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3963,7 +3963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7169154924226831782}
   - component: {fileID: 5708441846137981040}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4563,7 +4563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6883980804519474836}
   - component: {fileID: 6376410361139011692}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4594,7 +4594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4074041681291046226}
   - component: {fileID: 6397960343119490941}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4961,7 +4961,7 @@ GameObject:
   - component: {fileID: 8270104663062584315}
   - component: {fileID: 8824151290024658632}
   - component: {fileID: 7119667465915354736}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5108,7 +5108,7 @@ GameObject:
   - component: {fileID: 6203331424201799743}
   - component: {fileID: 359571579224834345}
   - component: {fileID: 7430720333556490862}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5534,7 +5534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885592135600935397}
   - component: {fileID: 8157192692087556084}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5774,7 +5774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7172587509268713950}
   - component: {fileID: 8315502399108166816}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5923,7 +5923,7 @@ GameObject:
   - component: {fileID: 5702817798197620819}
   - component: {fileID: 1066300737081814713}
   - component: {fileID: 8564632508419349189}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: "b\xFCrgerstube_walls"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6147,7 +6147,7 @@ GameObject:
   - component: {fileID: 353352669731458944}
   - component: {fileID: 588389809179369042}
   - component: {fileID: 8681208929605151162}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: buergerstube_window.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6180,7 +6180,7 @@ GameObject:
   - component: {fileID: 8287055081120039100}
   - component: {fileID: 608615395294002742}
   - component: {fileID: 8730951615692439297}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
