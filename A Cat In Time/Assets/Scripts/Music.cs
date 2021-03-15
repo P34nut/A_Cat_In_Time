@@ -118,8 +118,4 @@ public class Music : MonoBehaviour
         audioSourceB.UnPause();
     }
 
-    private void Update()
-    {
-    }
-
 }
