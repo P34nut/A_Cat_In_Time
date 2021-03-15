@@ -11,11 +11,15 @@ public class activateOutline : MonoBehaviour
     {
         if (SettingsHandler.Instance.didRiddle[2])
         {
+            outlineObject.GetComponentInParent<InitiateTravel>().enabled = true;
             outlineObject.SetActive(true);
+            
         }
         else
         {
+            outlineObject.GetComponentInParent<InitiateTravel>().enabled = false;
             outlineObject.SetActive(false);
+            
         }
     }
 }
