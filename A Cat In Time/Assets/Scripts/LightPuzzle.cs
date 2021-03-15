@@ -74,7 +74,6 @@ public class LightPuzzle : MonoBehaviour
     void EmitObject(GameObject obj)
     {
         int id = obj.GetComponent<LightPuzzleID>().ID;
-        unemitMat[id] = obj.GetComponent<MeshRenderer>().material;
         obj.GetComponent<MeshRenderer>().material = emitMat[id];
         obj.layer = 0;
         StartCoroutine( CheckForWin(obj));

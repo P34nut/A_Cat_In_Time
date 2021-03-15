@@ -521,15 +521,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitMat:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: faa9b663a250bc3449d5314e3d4f6a92, type: 2}
+  - {fileID: 2100000, guid: ddf4795d91aac7c40aa6be2ca99da88f, type: 2}
+  - {fileID: 2100000, guid: 22e89d23fa7b81a4395d23738e971ea1, type: 2}
+  - {fileID: 2100000, guid: 379b350f28aee644981f6839c449f6ec, type: 2}
   unemitMat:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: eff3520703b49ba41b8371acb4728db4, type: 2}
+  - {fileID: 2100000, guid: 958b86eca6edeba4c94cdfe5c9d20876, type: 2}
+  - {fileID: 2100000, guid: fcfc1b311c139b14abf8b60ba45f479e, type: 2}
+  - {fileID: 2100000, guid: 758fcf8bae8196a4696ffe0308fef772, type: 2}
   foundObj: 
   correctOrder: 00000000010000000200000003000000
   objects: []
