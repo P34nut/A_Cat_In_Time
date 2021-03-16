@@ -13,6 +13,7 @@ public class SimonSays : MonoBehaviour
     public MeshRenderer meshRender;
 
     private int bleepCount;
+    [SerializeField]
     private int roundCount;
 
     List<int> bleeps;
@@ -87,6 +88,7 @@ public class SimonSays : MonoBehaviour
     void GameOver()
     {
         Debug.Log("GAME OVER");
+        roundCount = 0;
         gameOver = true;
         inputEnabled = false;
 

@@ -165,10 +165,8 @@ public class TimeTravel : MonoBehaviour {
                 SceneManager.LoadScene(5);
                 break;
             case 7:
+                SettingsHandler.Instance.onSpawnLocation = true;
                 SceneManager.LoadScene(5);
-                break;
-            case 8:
-                SceneManager.LoadScene(7);
                 break;
 
         }

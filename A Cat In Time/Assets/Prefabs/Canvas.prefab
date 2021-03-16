@@ -2056,6 +2056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9494362374376134f99e61f9b9778236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Licht: {fileID: 0}
+  Kerze: {fileID: 0}
   audioClips:
   - {fileID: 8300000, guid: 71d15b151adde2b4fba0e5d988402636, type: 3}
   - {fileID: 8300000, guid: c6d3af4c634b0f2448b664257bef23d6, type: 3}
@@ -2090,6 +2092,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 8
     m_NumAlphaKeys: 2
+  isAbort: 0
 --- !u!82 &1776829033316118887
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2450,6 +2453,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.39215687
       objectReference: {fileID: 0}
+    - target: {fileID: 3158639981011418949, guid: 4195c2b38322afc4b9d91e0febfffa28,
+        type: 3}
+      propertyPath: tokenSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 30d25ac92b14afd4ba306936a39b5bad,
+        type: 3}
+    - target: {fileID: 3158639981011418949, guid: 4195c2b38322afc4b9d91e0febfffa28,
+        type: 3}
+      propertyPath: tokenSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d65344caf1812244a6c4c2c02a7862d,
+        type: 3}
     - target: {fileID: 3165606644847059964, guid: 4195c2b38322afc4b9d91e0febfffa28,
         type: 3}
       propertyPath: m_AnchorMin.y
