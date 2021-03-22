@@ -19,6 +19,7 @@ public class Vitrine : MonoBehaviour
 
     private IEnumerator ShowText()
     {
+        outlineObject.SetActive(true);
         text.SetActive(true);
 
         yield return new WaitForSeconds(4f);
@@ -29,8 +30,9 @@ public class Vitrine : MonoBehaviour
 
     private void Awake()
     {
-        showTokens();
-        outlineObject.SetActive(false);
+        
+        
+        
     }
 
     void showTokens()
@@ -47,7 +49,16 @@ public class Vitrine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SettingsHandler.Instance.didRiddle[0])
+        {
+            outlineObject.SetActive(true);
+        }
+        else
+        {
+            outlineObject.SetActive(false);
+        }
         
+        showTokens();
     }
 
     // Update is called once per frame

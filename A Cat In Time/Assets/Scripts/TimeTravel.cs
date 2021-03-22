@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class TimeTravel : MonoBehaviour {
     private bool travelComplete = true;     //damit man nicht spammen kann
@@ -38,6 +39,8 @@ public class TimeTravel : MonoBehaviour {
     private float blinkGradientPosition;
 
     public bool isAbort;
+
+
 
     private void Awake()
     {

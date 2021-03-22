@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class CatMoveTo : MonoBehaviour
 {
@@ -20,7 +21,12 @@ public class CatMoveTo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cat.SetActive(false);
+        //cat.SetActive(false);
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+            BeginMovement();
+        }
     }
 
     public void BeginMovement()

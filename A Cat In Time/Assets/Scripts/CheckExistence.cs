@@ -15,6 +15,8 @@ public class CheckExistence : MonoBehaviour
     [SerializeField]
     private GameObject Player;
 
+    private GameObject infoText;
+    private bool startLookAt = false;
 
     private void Awake()
     {
@@ -43,5 +45,32 @@ public class CheckExistence : MonoBehaviour
             Player.transform.rotation = SpawnLocation.transform.rotation;
             Player.GetComponent<NavMeshAgent>().Warp(SpawnLocation.transform.position);
         }
+
+        if (SceneManager.GetActiveScene().buildIndex == 1 && !SettingsHandler.Instance.didRiddle[0])
+        {
+            infoText = GameObject.Find("whiteboard_Steuerung");
+            StartCoroutine(WaitForLookAt());
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1 && SettingsHandler.Instance.didRiddle[0])
+        {
+            GameObject.Find("cat_prefab_toDoor").GetComponent<CatMoveTo>().BeginMovement();
+        }
     }
+
+    private void Update()
+    {
+        if (startLookAt)
+        {
+            Camera.main.transform.LookAt(infoText.transform);
+        }
+    }
+
+    IEnumerator WaitForLookAt()
+    {
+        startLookAt = true;
+        yield return new WaitForSecondsRealtime(10f);
+        startLookAt = false;
+    }
+
+
 }
