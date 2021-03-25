@@ -23,7 +23,18 @@ public class SettingsHandler : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    
+    public bool didAllRiddles()
+    {
+        for (int i = 0; i < didRiddle.Length; i++)
+        {
+            if (!didRiddle[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {

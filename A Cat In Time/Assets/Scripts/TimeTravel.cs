@@ -97,6 +97,11 @@ public class TimeTravel : MonoBehaviour {
                 mainCam.fieldOfView -= 90 * Time.deltaTime;
             }
 
+            if (mainCam.fieldOfView < 60f)
+            {
+                mainCam.fieldOfView = 60f;
+            }
+
         }
         
         if (initiatedTravel) {

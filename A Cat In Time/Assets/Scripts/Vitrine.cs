@@ -10,11 +10,26 @@ public class Vitrine : MonoBehaviour
     public GameObject text;
     public GameObject outlineObject;
 
+    [SerializeField]
+    private GameObject endScreen;
+
     private void OnMouseDown()
     {
-        Debug.Log("Clicked Vitrine");
-        cat.GetComponent<CatMoveTo>().BeginMovement();
-        StartCoroutine(ShowText());
+
+        if (SettingsHandler.Instance.didAllRiddles())
+        {
+            endScreen.SetActive(true);
+        }
+        else if (SettingsHandler.Instance.didRiddle[0])
+        {
+            return;
+        }
+        else
+        {
+            cat.GetComponent<CatMoveTo>().BeginMovement();
+            StartCoroutine(ShowText());
+        }
+        
     }
 
     private IEnumerator ShowText()
@@ -26,13 +41,6 @@ public class Vitrine : MonoBehaviour
 
         text.SetActive(false);
 
-    }
-
-    private void Awake()
-    {
-        
-        
-        
     }
 
     void showTokens()

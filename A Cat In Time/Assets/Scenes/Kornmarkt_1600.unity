@@ -4200,12 +4200,12 @@ PrefabInstance:
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
@@ -4220,7 +4220,7 @@ PrefabInstance:
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_text
-      value: "Oh nein die drei Scheffel haben nicht das selbe Volumen. \nSchaffst
+      value: "Oh nein, die drei Scheffel haben nicht dasselbe Volumen. \nSchaffst
         du es, dass alle drei gleich voll sind?\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
