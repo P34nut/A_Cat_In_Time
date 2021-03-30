@@ -134,6 +134,8 @@ public class LightPuzzle : MonoBehaviour
 
     void WonGame()
     {
+        audioSource.clip = audioClips[5];
+        audioSource.Play();
         SettingsHandler.Instance.didRiddle[3] = true;
         showTokenUI.Instance.setTokenUI(3);
         Invoke(nameof(To2020), 3f);

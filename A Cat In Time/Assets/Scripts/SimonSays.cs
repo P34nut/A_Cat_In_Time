@@ -75,7 +75,8 @@ public class SimonSays : MonoBehaviour
         StopAllCoroutines();
         //animator.Play("Idle"); ///////////////////////////////////////////////////////
         meshFilter.mesh = Meshes[0];
-
+        GetComponent<AudioSource>().Play();
+        
         SettingsHandler.Instance.didRiddle[1] = true;
         showTokenUI.Instance.setTokenUI(1);
         Invoke(nameof(to2020), 3f);

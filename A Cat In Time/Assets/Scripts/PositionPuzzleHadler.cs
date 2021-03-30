@@ -44,6 +44,7 @@ public class PositionPuzzleHadler : MonoBehaviour
     void WonGame()
     {
         SettingsHandler.Instance.didRiddle[2] = true;
+        GetComponent<AudioSource>().Play();
         showTokenUI.Instance.setTokenUI(2);
         Invoke(nameof(to2020), 3f);
     }
