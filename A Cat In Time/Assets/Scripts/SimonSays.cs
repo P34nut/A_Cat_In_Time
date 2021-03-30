@@ -26,6 +26,11 @@ public class SimonSays : MonoBehaviour
     bool gameOver = false;
     bool startedGame = false;
 
+    [SerializeField]
+    AudioSource audioSource;
+    [SerializeField]
+    AudioClip[] audioClips;
+
     //public Animator animator;
 
     private void OnMouseDown()
@@ -35,7 +40,7 @@ public class SimonSays : MonoBehaviour
 
     public void StartGame()
     {
-
+        
         meshFilter = GetComponent<MeshFilter>();
         //if (!SettingsHandler.Instance.didRiddle[1] && !startedGame)
         //{
@@ -75,7 +80,8 @@ public class SimonSays : MonoBehaviour
         StopAllCoroutines();
         //animator.Play("Idle"); ///////////////////////////////////////////////////////
         meshFilter.mesh = Meshes[0];
-        GetComponent<AudioSource>().Play();
+        audioSource.clip = audioClips[1]; 
+        audioSource.Play();
         
         SettingsHandler.Instance.didRiddle[1] = true;
         showTokenUI.Instance.setTokenUI(1);
@@ -102,6 +108,8 @@ public class SimonSays : MonoBehaviour
         panel.gameObject.SetActive(false);
         //animator.Play("Idle"); ////////////////////////////////////////////////
         meshFilter.mesh = Meshes[0];
+        audioSource.clip = audioClips[0];
+        audioSource.Play();
         gameOver = false;
         startedGame = false;
     }
@@ -144,6 +152,7 @@ public class SimonSays : MonoBehaviour
 
     IEnumerator IESimonSays()
     {
+        yield return new WaitForSeconds(.5f);
         inputEnabled = false;
 
         //Random nach Seed, dadurch aber jeder Durchlauf gleich. Falls jedes mal anders --> in Start eine RandomZahl erzeugen die als Seed nehmen
@@ -155,7 +164,7 @@ public class SimonSays : MonoBehaviour
         Debug.Log("______________________________________________");
         for (int i = 0; i < bleeps.Count; i++)
         {
-            ShowPose(bleeps[i]); //////////////////////////////////////////////////////////
+            ShowPose(bleeps[i]); 
             //AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0); /////////////////////////////////////////
             //yield return new WaitForSeconds(clipInfos[0].clip.length);
             yield return new WaitForSeconds(.5f);
