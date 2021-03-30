@@ -8,9 +8,9 @@ public class SimonSays : MonoBehaviour
 {
     public GameObject buttonPrefab;
     public Transform panel;
-    public Material[] materials;
     public Sprite[] sprites;
-    public MeshRenderer meshRender;
+    public Mesh[] Meshes;
+    MeshFilter meshFilter;
 
     private int bleepCount;
     [SerializeField]
@@ -35,6 +35,8 @@ public class SimonSays : MonoBehaviour
 
     public void StartGame()
     {
+
+        meshFilter = GetComponent<MeshFilter>();
         //if (!SettingsHandler.Instance.didRiddle[1] && !startedGame)
         //{
             startedGame = true;
@@ -50,7 +52,6 @@ public class SimonSays : MonoBehaviour
 
             StartCoroutine(IESimonSays());
         //}
-        
     }
 
     //Instantiate Button
@@ -73,7 +74,7 @@ public class SimonSays : MonoBehaviour
     {
         StopAllCoroutines();
         //animator.Play("Idle"); ///////////////////////////////////////////////////////
-        meshRender.material = materials[0];
+        meshFilter.mesh = Meshes[0];
 
         SettingsHandler.Instance.didRiddle[1] = true;
         showTokenUI.Instance.setTokenUI(1);
@@ -99,7 +100,7 @@ public class SimonSays : MonoBehaviour
         playerButtons.Clear();
         panel.gameObject.SetActive(false);
         //animator.Play("Idle"); ////////////////////////////////////////////////
-        meshRender.material = materials[0];
+        meshFilter.mesh = Meshes[0];
         gameOver = false;
         startedGame = false;
     }
@@ -157,11 +158,11 @@ public class SimonSays : MonoBehaviour
             //AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0); /////////////////////////////////////////
             //yield return new WaitForSeconds(clipInfos[0].clip.length);
             yield return new WaitForSeconds(.5f);
-            meshRender.material = materials[0];
+            meshFilter.mesh = Meshes[0];
             yield return new WaitForSeconds(.5f);
         }
         Debug.Log("--------------------------------------------------");
-        meshRender.material = materials[0];
+        meshFilter.mesh = Meshes[0];
         inputEnabled = true;
 
         yield return null;
@@ -172,28 +173,29 @@ public class SimonSays : MonoBehaviour
     {
         switch (index)
         {
+            //load 3d models instead of Mesh
             case 0:
                 //animator.Play("Hit");
-                meshRender.material = materials[1];
+                meshFilter.mesh = Meshes[1];
                 Debug.Log("SimonSays: 1");
                 break;
             case 1:
                 //animator.Play("Hit2");
-                meshRender.material = materials[2];
+                meshFilter.mesh = Meshes[2];
                 Debug.Log("SimonSays: 2");
                 break;
             case 2:
                 //animator.Play("Spell");
-                meshRender.material = materials[3];
+                meshFilter.mesh = Meshes[3];
                 Debug.Log("SimonSays: 3");
                 break;
             case 3:
                 //animator.Play("Death");
-                meshRender.material = materials[4];
+                meshFilter.mesh = Meshes[4];
                 Debug.Log("SimonSays: 4");
                 break;
             case 4:
-                meshRender.material = materials[0];
+                meshFilter.mesh = Meshes[0];
                 break;
         }
 
@@ -223,7 +225,7 @@ public class SimonSays : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        meshRender.material = materials[0];
+        meshFilter.mesh = Meshes[0];
 
     }
 
