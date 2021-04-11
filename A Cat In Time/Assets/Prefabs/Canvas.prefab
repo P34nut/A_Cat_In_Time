@@ -2628,13 +2628,13 @@ PrefabInstance:
         type: 3}
       propertyPath: tokenSprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 30d25ac92b14afd4ba306936a39b5bad,
+      objectReference: {fileID: 21300000, guid: 9a77b8f0e0017ca45ba439c13630e915,
         type: 3}
     - target: {fileID: 3158639981011418949, guid: 4195c2b38322afc4b9d91e0febfffa28,
         type: 3}
       propertyPath: tokenSprites.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: 6d65344caf1812244a6c4c2c02a7862d,
+      objectReference: {fileID: 21300000, guid: c2ad50f98ab3a9549a86aa14994b3b7d,
         type: 3}
     - target: {fileID: 3165606644847059964, guid: 4195c2b38322afc4b9d91e0febfffa28,
         type: 3}
