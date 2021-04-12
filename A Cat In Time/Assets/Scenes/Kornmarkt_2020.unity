@@ -5599,6 +5599,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 650159069}
     m_Modifications:
+    - target: {fileID: 819186794789254290, guid: 55d6c7b4d0441614d946cdc940e27d47,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 1878769504399375315, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5771,6 +5776,11 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 1.74
       objectReference: {fileID: 0}
+    - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 4310117480577169545, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_Mesh
@@ -9401,22 +9411,22 @@ PrefabInstance:
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 173
+      value: 229
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 29
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 26
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
@@ -9427,13 +9437,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "Zum Wechseln des Raumes auf die T\xFCre tippen (Erst nach Beendigung
-        des ersten R\xE4tsels m\xF6glich)\n\nTexte, die f\xFCr das Spielverst\xE4ndnis
-        wichtig sind, sind in blau geschrieben.\n\n\n"
+        des ersten R\xE4tsels m\xF6glich)\n\nTippe auf die Tokens oben links um das
+        Men\xFC zu \xF6ffnen.\n\nTexte, die f\xFCr das Spielverst\xE4ndnis wichtig
+        sind, sind in blau geschrieben.\n\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: -1
+      value: 227
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
@@ -9459,6 +9470,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294950656
+      objectReference: {fileID: 0}
+    - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -0.13192664
       objectReference: {fileID: 0}
     - target: {fileID: 4310117480577169545, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
@@ -9915,7 +9931,7 @@ MonoBehaviour:
   m_text: "Im virtuellen \nMuseum bleiben"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 64b7b98c5c7507e42b893292f6ea3000, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13050,7 +13066,7 @@ MonoBehaviour:
     zu vereinen."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 64b7b98c5c7507e42b893292f6ea3000, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17947,7 +17963,7 @@ MonoBehaviour:
   m_text: Zur Website des Stadtmuseums
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 64b7b98c5c7507e42b893292f6ea3000, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20654,7 +20670,7 @@ MonoBehaviour:
     willst, dann komm doch gerne mal im Stadtmuseum vorbei.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 64b7b98c5c7507e42b893292f6ea3000, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21460,6 +21476,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 682114221}
     m_Modifications:
+    - target: {fileID: 819186794789254290, guid: 55d6c7b4d0441614d946cdc940e27d47,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 1878769504399375315, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21598,7 +21619,7 @@ PrefabInstance:
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
@@ -21617,7 +21638,7 @@ PrefabInstance:
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: 181
+      value: 314
       objectReference: {fileID: 0}
     - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
@@ -21634,6 +21655,11 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 1.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2147949809258359672, guid: 55d6c7b4d0441614d946cdc940e27d47,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 4310117480577169545, guid: 55d6c7b4d0441614d946cdc940e27d47,
         type: 3}
       propertyPath: m_Mesh
@@ -25512,7 +25538,7 @@ MonoBehaviour:
   m_text: Spiel beenden
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 64b7b98c5c7507e42b893292f6ea3000, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
