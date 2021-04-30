@@ -9,6 +9,7 @@ public class CatMoveTo : MonoBehaviour
     public Transform target;
     NavMeshAgent agent;
     public GameObject cat;
+    Animator animator;
 
     [SerializeField]
     bool beginMovement;
@@ -18,6 +19,7 @@ public class CatMoveTo : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     public void BeginMovement()
@@ -38,7 +40,7 @@ public class CatMoveTo : MonoBehaviour
         if (agent.remainingDistance == 0 && beginMovement && !catArrived)
         {
             //Debug.Log("Arrived");
-            cat.SetActive(false);
+            animator.speed = 0f;
             catArrived = true;
         }
     }
