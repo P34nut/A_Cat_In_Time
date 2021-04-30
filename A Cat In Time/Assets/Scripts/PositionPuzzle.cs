@@ -46,21 +46,19 @@ public class PositionPuzzle : MonoBehaviour
 
             if ((targetTransform.position - playerTransform.position).sqrMagnitude < 0.9f && AlmostEqual(targetTransform.rotation.eulerAngles, mainCam.rotation.eulerAngles, rotationThreshold))
             {
-                moveFracture();
-                
-                
+                moveFracture(); 
             }
         }
 
+
         if (startBlend && blendValue >= 0f)
         {
-            Quaternion lookRotation = Quaternion.LookRotation(targetLookAt.transform.position - mainCam.transform.position);
-            mainCam.transform.rotation = Quaternion.Slerp(mainCam.transform.rotation, lookRotation, 0.4f * Time.deltaTime);
+            //Quaternion lookRotation = Quaternion.LookRotation(targetLookAt.position - mainCam.position);
+            //mainCam.rotation = Quaternion.Slerp(mainCam.rotation, lookRotation, 0.4f * Time.deltaTime);
             //mainCam.LookAt(targetLookAt);
             skinned.SetBlendShapeWeight(0, blendValue);
             blendValue -= blendSpeed;
         }
-
     }
 
     public static bool AlmostEqual(Vector3 v1, Vector3 v2, float precision)
