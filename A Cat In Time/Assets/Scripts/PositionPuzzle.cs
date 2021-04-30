@@ -19,6 +19,7 @@ public class PositionPuzzle : MonoBehaviour
     float blendValue = 100f;
     [SerializeField]
     float blendSpeed;
+    public float rotationThreshold = 10;
 
 
     // Start is called before the first frame update
@@ -42,7 +43,7 @@ public class PositionPuzzle : MonoBehaviour
                 Debug.Log("Postion close");
             }*/
 
-            if ((targetTransform.position - playerTransform.position).sqrMagnitude < 0.9f && AlmostEqual(targetTransform.rotation.eulerAngles, mainCam.rotation.eulerAngles, 7f))
+            if ((targetTransform.position - playerTransform.position).sqrMagnitude < 0.9f && AlmostEqual(targetTransform.rotation.eulerAngles, mainCam.rotation.eulerAngles, rotationThreshold))
             {
                 moveFracture();
                 
@@ -52,7 +53,9 @@ public class PositionPuzzle : MonoBehaviour
 
         if (startBlend && blendValue >= 0f)
         {
-            mainCam.LookAt(targetLookAt);
+            Quaternion lookRotation = Quaternion.LookRotation(targetLookAt.transform.position - mainCam.transform.position);
+            mainCam.transform.rotation = Quaternion.Slerp(mainCam.transform.rotation, lookRotation, 0.4f * Time.deltaTime);
+            //mainCam.LookAt(targetLookAt);
             skinned.SetBlendShapeWeight(0, blendValue);
             blendValue -= blendSpeed;
         }
