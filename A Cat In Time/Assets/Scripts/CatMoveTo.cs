@@ -11,7 +11,7 @@ public class CatMoveTo : MonoBehaviour
     public GameObject cat;
 
     [SerializeField]
-    bool interactedVitrine;
+    bool beginMovement;
 
     bool catArrived = false;
 
@@ -20,22 +20,11 @@ public class CatMoveTo : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //cat.SetActive(false);
-        if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
-            BeginMovement();
-        }
-    }
-
     public void BeginMovement()
     {
-        interactedVitrine = true;
+        beginMovement = true;
 
-        if (target != null && interactedVitrine)
+        if (target != null && beginMovement)
         {
             cat.SetActive(true);
             agent.SetDestination(target.position);
@@ -46,7 +35,7 @@ public class CatMoveTo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (agent.remainingDistance == 0 && interactedVitrine && !catArrived)
+        if (agent.remainingDistance == 0 && beginMovement && !catArrived)
         {
             //Debug.Log("Arrived");
             cat.SetActive(false);

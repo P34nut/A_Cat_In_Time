@@ -9185,6 +9185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1994832864}
   - component: {fileID: 1994832863}
+  - component: {fileID: 1994832865}
   m_Layer: 0
   m_Name: checkExistence
   m_TagString: Untagged
@@ -9224,6 +9225,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1994832865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994832862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53747b8ec22594547b9e0e87c7cc6924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cats:
+  - {fileID: 0}
+  - {fileID: 2084598881}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2006371597
 GameObject:
   m_ObjectHideFlags: 0
@@ -9448,6 +9471,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 0d19df90adbcab8479453b4b93f7df01,
     type: 3}
   m_PrefabInstance: {fileID: 2015061237}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2084598881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4848157216846652161, guid: d54a8348f5c23fb4e8907e98426c0fab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630081074}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &354867671221460727
 Transform:
