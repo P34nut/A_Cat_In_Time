@@ -58,6 +58,27 @@ public class ChangeRoom : MonoBehaviour
                     {
                         buttons[i].SetActive(true);
                     }
+                    else
+                    {
+                        buttons[i].SetActive(false);
+                    }
+                }
+                if (SettingsHandler.Instance.didRiddle[0])
+                {
+                    buttons[1].SetActive(true);
+                }
+                break;
+            case 2:
+                for (int i = 0; i < 4; i++)
+                {
+                    if (SettingsHandler.Instance.wasInRoom[i])
+                    {
+                        buttons[i].SetActive(true);
+                    }
+                    else
+                    {
+                        buttons[i].SetActive(false);
+                    }
                 }
                 if (SettingsHandler.Instance.didRiddle[0])
                 {
@@ -70,6 +91,27 @@ public class ChangeRoom : MonoBehaviour
                     if (i != 1 && SettingsHandler.Instance.wasInRoom[i])
                     {
                         buttons[i].SetActive(true);
+                    }
+                    else
+                    {
+                        buttons[i].SetActive(false);
+                    }
+                }
+                if (SettingsHandler.Instance.didRiddle[1])
+                {
+                    buttons[2].SetActive(true);
+                }
+                break;
+            case 4:
+                for (int i = 0; i < 4; i++)
+                {
+                    if (SettingsHandler.Instance.wasInRoom[i])
+                    {
+                        buttons[i].SetActive(true);
+                    }
+                    else
+                    {
+                        buttons[i].SetActive(false);
                     }
                 }
                 if (SettingsHandler.Instance.didRiddle[1])
@@ -84,6 +126,27 @@ public class ChangeRoom : MonoBehaviour
                     {
                         buttons[i].SetActive(true);
                     }
+                    else
+                    {
+                        buttons[i].SetActive(false);
+                    }
+                }
+                if (SettingsHandler.Instance.didRiddle[2])
+                {
+                    buttons[3].SetActive(true);
+                }
+                break;
+            case 6:
+                for (int i = 0; i < 4; i++)
+                {
+                    if (SettingsHandler.Instance.wasInRoom[i])
+                    {
+                        buttons[i].SetActive(true);
+                    }
+                    else
+                    {
+                        buttons[i].SetActive(false);
+                    }
                 }
                 if (SettingsHandler.Instance.didRiddle[2])
                 {
@@ -96,6 +159,10 @@ public class ChangeRoom : MonoBehaviour
                     if (i != 3&& SettingsHandler.Instance.wasInRoom[i])
                     {
                         buttons[i].SetActive(true);
+                    }
+                    else
+                    {
+                        buttons[i].SetActive(false);
                     }
                 }
                 break;

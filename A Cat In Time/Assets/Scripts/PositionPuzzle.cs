@@ -42,7 +42,7 @@ public class PositionPuzzle : MonoBehaviour
                 Debug.Log("Postion close");
             }*/
 
-            if ((targetTransform.position - playerTransform.position).sqrMagnitude < 0.75f && AlmostEqual(targetTransform.rotation.eulerAngles, mainCam.rotation.eulerAngles, 5f))
+            if ((targetTransform.position - playerTransform.position).sqrMagnitude < 0.9f && AlmostEqual(targetTransform.rotation.eulerAngles, mainCam.rotation.eulerAngles, 7f))
             {
                 moveFracture();
                 

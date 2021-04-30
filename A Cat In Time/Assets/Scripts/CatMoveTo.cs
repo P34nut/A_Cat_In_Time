@@ -13,6 +13,8 @@ public class CatMoveTo : MonoBehaviour
     [SerializeField]
     bool interactedVitrine;
 
+    bool catArrived = false;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -44,10 +46,11 @@ public class CatMoveTo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (agent.remainingDistance == 0 && interactedVitrine)
+        if (agent.remainingDistance == 0 && interactedVitrine && !catArrived)
         {
-            Debug.Log("Arrived");
+            //Debug.Log("Arrived");
             cat.SetActive(false);
+            catArrived = true;
         }
     }
 

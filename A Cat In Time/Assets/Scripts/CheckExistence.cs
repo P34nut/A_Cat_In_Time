@@ -33,8 +33,10 @@ public class CheckExistence : MonoBehaviour
             
             if (SettingsHandler.Instance.onSpawnLocation)
             {
+                
                 Player.transform.position = SpawnLocation.transform.position;
-                Player.transform.rotation = SpawnLocation.transform.rotation;
+                Player.transform.localRotation = SpawnLocation.transform.localRotation;
+                Camera.main.transform.rotation = new Quaternion(0, 0, 0, 0);
                 Player.GetComponent<NavMeshAgent>().Warp(SpawnLocation.transform.position);
             }
         }

@@ -60,7 +60,7 @@ public class MoveTo : MonoBehaviour
             {
                 Debug.Log("DistanceGround: " + hit.distance);
                 Debug.Log("DistanceDont: " + hit2.distance);
-                if (hit2.distance > hit.distance)
+                if (hit2.distance > hit.distance && hit.distance != 0)
                 {
                     agent.SetDestination(hit.point);
                 }
