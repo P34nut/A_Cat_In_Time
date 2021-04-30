@@ -9,6 +9,7 @@ public class CatMoveTo : MonoBehaviour
     public Transform target;
     NavMeshAgent agent;
     public GameObject cat;
+    Animator animator;
 
     [SerializeField]
     bool interactedVitrine;
@@ -18,6 +19,7 @@ public class CatMoveTo : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -49,7 +51,7 @@ public class CatMoveTo : MonoBehaviour
         if (agent.remainingDistance == 0 && interactedVitrine && !catArrived)
         {
             //Debug.Log("Arrived");
-            cat.SetActive(false);
+            animator.speed = 0f;
             catArrived = true;
         }
     }
