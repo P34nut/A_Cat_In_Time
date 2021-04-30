@@ -15,6 +15,7 @@ public class PositionPuzzle : MonoBehaviour
     private SkinnedMeshRenderer skinned;
     [SerializeField]
     int id;
+    [SerializeField]
     bool startBlend = false;
     float blendValue = 100f;
     [SerializeField]
