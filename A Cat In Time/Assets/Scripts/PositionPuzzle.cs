@@ -55,7 +55,7 @@ public class PositionPuzzle : MonoBehaviour
         {
             //Quaternion lookRotation = Quaternion.LookRotation(targetLookAt.position - mainCam.position);
             //mainCam.rotation = Quaternion.Slerp(mainCam.rotation, lookRotation, 0.4f * Time.deltaTime);
-            //mainCam.LookAt(targetLookAt);
+            mainCam.LookAt(targetLookAt);
             skinned.SetBlendShapeWeight(0, blendValue);
             blendValue -= blendSpeed;
         }

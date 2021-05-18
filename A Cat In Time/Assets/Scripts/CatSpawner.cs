@@ -8,6 +8,10 @@ public class CatSpawner : MonoBehaviour
     [SerializeField]
     GameObject[] cats;
 
+    [SerializeField]
+    GameObject endPanel;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +61,7 @@ public class CatSpawner : MonoBehaviour
                 {
                     cats[7].transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
                     cats[7].GetComponent<CatMoveTo>().BeginMovement();
+                    endPanel.SetActive(true);
                 }
                 break;
             case 6:

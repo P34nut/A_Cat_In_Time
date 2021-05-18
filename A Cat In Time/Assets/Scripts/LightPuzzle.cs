@@ -76,7 +76,8 @@ public class LightPuzzle : MonoBehaviour
         int id = obj.GetComponent<LightPuzzleID>().ID;
         obj.GetComponent<MeshRenderer>().material = emitMat[id];
         obj.layer = 0;
-        StartCoroutine( CheckForWin(obj));
+        //StartCoroutine( CheckForWinOrder(obj));
+        CheckForWinNoOrder();
     }
 
     void DeEmitObjects(GameObject obj)
@@ -95,7 +96,26 @@ public class LightPuzzle : MonoBehaviour
 
     }
 
-    IEnumerator CheckForWin(GameObject obj)
+    void CheckForWinNoOrder()
+    {
+        audioSource.clip = audioClips[counter];
+        audioSource.Play();
+        foundObj[counter] = true;
+        counter++;
+
+        for (int i = 0; i < foundObj.Length; i++)
+        {
+            if (!foundObj[i])
+            {
+               return;
+            }
+        }
+
+        WonGame();
+
+    }
+
+    IEnumerator CheckForWinOrder(GameObject obj)
     {
         int id = obj.GetComponent<LightPuzzleID>().ID;
 
